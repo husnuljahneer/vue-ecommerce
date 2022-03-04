@@ -1,11 +1,33 @@
 <template>
   <div id="home_top">
-    HOME PAGE
+    <Header />
+    <ScrollToTop/>
+    <!-- <Shipping /> -->
+    <TheOpener/>
+
+    <Styled />
+    <Subscribe/>
+    <!-- <MobileApp /> -->
   </div>
 </template>
 
 <script>
+import ScrollToTop from "@/components/ScrollToTop.vue";
+import Header from '@/components/Header.vue'
+import TheOpener from '@/components/TheOpener.vue'
+// import Shipping from '@/components/Shipping.vue'
+// import MobileApp from '@/components/MobileApp.vue'
+import Subscribe from '@/components/Subscribe.vue'
+import Styled from '@/components/Styled.vue'
 export default {
-  
+  components: {
+    ScrollToTop,
+    Header,
+    TheOpener,
+    // Shipping,
+    Styled,
+    // MobileApp,
+    Subscribe
+  }
 }
 </script>
