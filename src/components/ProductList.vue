@@ -11,19 +11,8 @@
         <div
           class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4"
         >
-          <ProductLoadingCard/>
-          <router-link to="/productDetails"> 
-          <ProductCard />
-          </router-link>
-          <router-link to="/productDetails"> 
-          <ProductCard />
-          </router-link>
-           <router-link to="/productDetails"> 
-          <ProductCard />
-          </router-link>
-           <router-link to="/productDetails"> 
-          <ProductCard />
-          </router-link>
+          <ProductLoadingCard v-if="!products"/>    
+          <ProductCard v-else v-for="product in products" :key="product.id" product="product"/>
         </div>
       </div>
     </div>
@@ -34,14 +23,18 @@
 import ProductCard from "@/components/ProductCard.vue";
 import ProductLoadingCard from '@/components/ProductLoadingCard.vue'
 export default {
-  data() {
-    return {
-      products: null,
-    };
-  },
   components: {
     ProductCard,
     ProductLoadingCard
+  },
+  computed: {
+    products() {
+      return this.$store.state.products.products;
+    },
+  },
+  created() {
+    this.$store.dispatch("products/getAllProducts");
+    console.log("products", this.products);
   },
 };
 </script>
