@@ -38,11 +38,7 @@
               relative
             "
           >
-            <img
-              :src="product.image"
-              class="w-full relative z-10"
-              alt=""
-            />
+            <img :src="product.image" class="w-full relative z-10" alt="" />
           </div>
         </div>
 
@@ -58,22 +54,25 @@
             />
           </div>
           <div class="mb-10">
-            <h1 class="font-bold uppercase text-2xl mb-5">{{product.name}}</h1>
+            <h1 class="font-bold uppercase text-2xl mb-5">
+              {{ product.name }}
+            </h1>
 
             <p class="text-sm">
-             {{product.description}}
+              {{ product.description }}
             </p>
           </div>
           <div>
             <div class="inline-block align-bottom mr-5">
               <span class="text-2xl leading-none align-baseline">$</span>
-              <span class="font-bold text-5xl leading-none align-baseline"
-                >{{product.price}}</span
-              >
+              <span class="font-bold text-5xl leading-none align-baseline">{{
+                product.price
+              }}</span>
               <span class="text-2xl leading-none align-baseline">.00</span>
             </div>
             <div class="inline-block align-bottom mt-5">
               <button
+                @click="addProductToCart(product)"
                 class="
                   btn btn-accent
                   rounded-sm
@@ -95,7 +94,7 @@
       </div>
     </div>
   </div>
-    <RelatedProducts />
+  <RelatedProducts />
 </template>
 
 <script>
@@ -118,7 +117,11 @@ export default {
     product() {
       return this.$store.state.products.product;
     },
-    
+  },
+  methods: {
+    addProductToCart(product) {
+      this.$store.dispatch("cart/addProductToCart", product);
+    },
   },
   created() {
     //scroll to top
