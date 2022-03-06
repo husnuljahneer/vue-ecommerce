@@ -11,6 +11,7 @@
         <div
           class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4"
         >
+          <ProductLoadingCard/>
           <router-link to="/productDetails"> 
           <ProductCard />
           </router-link>
@@ -31,6 +32,7 @@
 
 <script>
 import ProductCard from "@/components/ProductCard.vue";
+import ProductLoadingCard from '@/components/ProductLoadingCard.vue'
 export default {
   data() {
     return {
@@ -39,6 +41,7 @@ export default {
   },
   components: {
     ProductCard,
+    ProductLoadingCard
   },
 };
 </script>

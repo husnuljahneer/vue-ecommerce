@@ -12,7 +12,8 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+
 import ScrollToTop from "@/components/ScrollToTop.vue";
 import Header from '@/components/Header.vue'
 import TheOpener from '@/components/TheOpener.vue'
@@ -25,6 +26,7 @@ export default {
   data() {
     return {
       testStatic: '',
+      cartCount: 1,
     };
   },
   components: {
@@ -38,10 +40,11 @@ export default {
     Subscribe
   },
   created() {
-    axios.get('http://localhost:3000/').then(response => {
-      this.testStatic = response.data;
-      console.log(this.testStatic);
-    })
+    // axios.get('http://localhost:3000/').then(response => {
+    //   this.testStatic = response.data;
+    //   console.log(this.testStatic);
+    // })
+    console.log(this.$store.state.cartCount);
   },
 }
 </script>
