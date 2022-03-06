@@ -1,5 +1,5 @@
-<template>
-  <section class="cart-filled mt-10">
+ <template>
+  <section class="cart-filled mt-10" v-if="cartItemCount >= 1">
     <div class="flex text-3xl px-10 lg:px-20 md:px-10">// CART</div>
     <div class="flex justify-center my-6">
       <h2
@@ -14,6 +14,7 @@
           font-semibold
           cursor-pointer
         "
+        @click="clearCart()"
       >
         CLEAR CART
       </h2>
@@ -44,15 +45,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr v-for="item in cart" :key="item.id">
                 <td class="hidden pb-4 md:table-cell">
-                  <img src="https://picsum.photos/200/300" class="w-24 rounded" alt="Thumbnail" />
+                  <img :src="item.image" class="w-24 rounded" alt="Thumbnail" />
                 </td>
                 <td class="text-left md:text-center">
                   <p class="mb-2 md:ml-4 text-left md:text-center">
-                    Test Product Name
+                    {{ item.name }}
                   </p>
                   <button
+                    @click="removeProductFromCart(item)"
                     type="submit"
                     class="text-gray-700 md:ml-4"
                   >
@@ -89,6 +91,7 @@
                           <button
                             min="1"
                             max="10"
+                            @click="decreaseQty(item)"
                             data-action="decrement"
                             class="
                               bg-gray-200
@@ -104,7 +107,7 @@
                           </button>
                           <input
                             type="number"
-                            value="5"
+                            :value="item.qty"
                             class="
                               focus:outline-none
                               text-center
@@ -125,6 +128,7 @@
                           <button
                             min="1"
                             max="10"
+                            @click="increaseQty(item)"
                             data-action="increment"
                             class="
                               bg-gray-200
@@ -144,12 +148,12 @@
                 </td>
                 <td class="hidden text-right md:table-cell">
                   <span class="text-sm lg:text-base font-medium">
-                   123 $
+                    {{ item.price }} $
                   </span>
                 </td>
                 <td class="text-right">
                   <span class="text-sm lg:text-base font-medium">
-                    423 $
+                    {{ item.qty * item.price }} $
                   </span>
                 </td>
               </tr>
@@ -185,7 +189,7 @@
                       text-center text-gray-900
                     "
                   >
-                    323.00 $
+                    {{ cartTotalPrice }}.00 $
                   </div>
                 </div>
                 <div class="flex justify-between border-b">
@@ -209,7 +213,7 @@
                       text-center text-gray-900
                     "
                   >
-                    50.00 $
+                    {{ shippingRate }}.00 $
                   </div>
                 </div>
                 <div class="flex justify-between border-b">
@@ -234,7 +238,7 @@
                       text-center text-gray-900
                     "
                   >
-                   324.00 $
+                    {{ cartTotalPrice + shippingRate }}.00 $
                   </div>
                 </div>
 
@@ -266,7 +270,38 @@
 </template>
 
   <script>
-export default {};
+export default {
+  data() {
+   return{
+     shippingRate:50,
+   }
+  },
+  computed: {
+    cart(){
+      return this.$store.state.cart.cart;
+    },
+    cartTotalPrice() {
+       return this.$store.getters["cart/cartTotalPrice"];
+    },
+    cartItemCount(){
+      return this.$store.getters["cart/cartItemCount"];
+    }
+  },
+  methods: {
+    increaseQty(item){
+      this.$store.dispatch("cart/increaseQty", item);
+    },
+    decreaseQty(item){
+      this.$store.dispatch("cart/decreaseQty", item);
+    },
+    removeProductFromCart(item){
+      this.$store.dispatch("cart/removeProductFromCart", item);
+    },
+    clearCart(){
+      this.$router.push("cart/clearCart");
+    }
+  },
+};
 </script>
 
 <style>
