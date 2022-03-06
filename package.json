@@ -11,7 +11,7 @@
         "@formkit/themes": "^1.0.0-beta.2",
         "@formkit/vue": "^1.0.0-beta.2",
         "axios": "^0.25.0",
-        "core-js": "^3.6.5",
+        "core-js": "3.21.1",
         "daisyui": "^1.25.4",
         "vue": "^3.0.0",
         "vue-router": "^4.0.0-0",
