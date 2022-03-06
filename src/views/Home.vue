@@ -25,8 +25,7 @@ import Styled from '@/components/Styled.vue'
 export default {
   data() {
     return {
-      testStatic: '',
-      cartCount: 1,
+      products: [],
     };
   },
   components: {
@@ -39,13 +38,19 @@ export default {
     // MobileApp,
     Subscribe
   },
+  
   created() {
     // axios.get('http://localhost:3000/').then(response => {
     //   this.testStatic = response.data;
     //   console.log(this.testStatic);
     // })
-    console.log(this.$store.state.cartCount);
-    console.log(this.$store.state.products.testCount);
+    // console.log(this.$store.state.cartCount);
+    // console.log(this.$store.state.products.testCount);
+    console.log(this.$store.dispatch('products/getAllProducts'))
+    console.log(this.$store.state.products.products)
   },
+  computed() {
+     this.products = this.$store.state.products.products;
+  }
 }
 </script>

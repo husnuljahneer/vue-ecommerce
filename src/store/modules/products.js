@@ -2,28 +2,29 @@ import axios from 'axios';
 import baseURL from '../../Services/Base';
 
 const state = () => ({
-    testCount: 180,
+    products: [],
+    product: [],
 })
 
 const getters = {
-    getTestCount: state => state.testCount,
-}
-
-const mutations = {
-    SET_TEST_COUNT(state, payload) {
-        state.testCount = payload;
-    }
+    products: (state) => state.products,
 }
 
 const actions = {
-    async getTestCount({ commit }) {
-        try {
-            const response = await axios.get(baseURL + 'test');
-            commit('SET_TEST_COUNT', response.data.count);
-        } catch (error) {
-            console.log(error);
-        }
+    getAllProducts({ commit }) {
+        axios.get(baseURL + 'products')
+            .then(response => {
+                commit('SET_PRODUCTS', response.data.products)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
+}
+const mutations = {
+    SET_PRODUCTS(state, products) {
+        state.products = products
+    },
 }
 
 export default {
