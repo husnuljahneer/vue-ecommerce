@@ -126,7 +126,7 @@
                   "
                   v-if="cartCount !== 0"
                 >
-                  {{ cartCount }}
+                  {{cartCount}}
                 </div>
               </button>
            
@@ -167,7 +167,11 @@
 
 <script>
 export default {
- 
+  data() {
+    return {
+      cartCount: 12,
+    };
+  },
 };
 </script>
 
