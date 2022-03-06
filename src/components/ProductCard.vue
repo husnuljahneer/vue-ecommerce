@@ -8,6 +8,7 @@
     <div class="flex justify-end items-start" style="z-index: 1">
       <div class="flex flex-row absolute justify-end space-x-2">
         <button
+          @click="test"
           class="btn btn-ghost hover:bg-white btn-lg md:btn-lg lg:btn-lg xl:btn-lg"
           style="z-index: 2"
         >
@@ -26,14 +27,14 @@
           </svg>
         </button>
       </div>
-        <img class="h-72 sm:h-96 md:h-full" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" role="img"/>
+        <img class="h-72 sm:h-96 md:h-full" :src="product.image" alt="" role="img"/>
     </div>
     <div class="flex flex-col sm:flex-row justify-between">
       <h2 class="text-sm md:text-base text-gray-700 dark:text-white mt-0 sm:mt-5">
-       SAMPLE PRODUCT
+       {{product.name}}
       </h2>
       <p class="text-2xs md:text-base text-gray-500 font-semibold dark:text-white mt-0 sm:mt-5">
-        $12.00
+       $ {{product.price}}
       </p>
     </div>
   </div>
@@ -42,7 +43,13 @@
 <script>
 
 export default {
- 
+  props:["product"],
+
+  methods: {
+    test() {
+      console.log("test");
+    }
+  }
 };
 </script>
 

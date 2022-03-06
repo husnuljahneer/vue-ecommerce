@@ -12,7 +12,7 @@
           class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4"
         >
           <ProductLoadingCard v-if="!products"/>    
-          <ProductCard v-else v-for="product in products" :key="product.id" product="product"/>
+          <ProductCard v-else v-for="product in products" :key="product.id" :product="product"/>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("products/getAllProducts");
+     this.$store.dispatch('products/getAllProducts')
     console.log("products", this.products);
   },
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import baseURL from '../../Services/Base';
+import baseUrl from '../../Services/Base';
 
 const state = () => ({
     products: [],
@@ -12,18 +12,14 @@ const getters = {
 
 const actions = {
     getAllProducts({ commit }) {
-        axios.get(baseURL + 'products')
-            .then(response => {
-                commit('SET_PRODUCTS', response.data.products)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+        axios.get(baseUrl + "products").then((response) => {
+            commit("SET_PRODUCTS", response.data.products);
+        });
+    },
 }
 const mutations = {
     SET_PRODUCTS(state, products) {
-        state.products = products
+        state.products = products;
     },
 }
 
