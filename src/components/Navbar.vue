@@ -192,10 +192,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      cartCount: 12,
-    };
+  computed: {
+    cartCount() {
+      console.log(this.$store.getters["cart/cartItemCount"]);
+      return this.$store.getters["cart/cartItemCount"];
+    }
   },
 };
 </script>
