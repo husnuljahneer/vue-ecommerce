@@ -86,20 +86,15 @@
       </div>
     </div>
   </div>
-    <RelatedProducts />
 </template>
 
 <script>
-import RelatedProducts from "@/components/RelatedProducts.vue";
 export default {
   data () {
     return {
       products: null
     }
   },
-  components: {
-    RelatedProducts
-  }
 };
 </script>
 <style>

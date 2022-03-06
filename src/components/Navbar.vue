@@ -2,7 +2,6 @@
 
 <!-- mobile navigation bar -->
 
-
   <div class="sticky top-0 bg-white z-50 flex flex-col sm:flex md:hidden lg:hidden justify-around py-2 shadow-sm ">
     <div class="text-2xl font-serif mb-2">
       <router-link to="/" class="z-20"> OUTREACH </router-link>
