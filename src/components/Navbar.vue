@@ -1,39 +1,42 @@
 <template>
+  <!-- mobile navigation bar -->
 
-<!-- mobile navigation bar -->
-
-  <div class="sticky top-0 bg-white z-50 flex flex-col sm:flex md:hidden lg:hidden justify-around py-2 shadow-sm ">
+  <div
+    class="
+      sticky
+      top-0
+      bg-white
+      z-50
+      flex flex-col
+      sm:flex
+      md:hidden
+      lg:hidden
+      justify-around
+      py-2
+      shadow-sm
+    "
+  >
     <div class="text-2xl font-serif mb-2">
       <router-link to="/" class="z-20"> OUTREACH </router-link>
     </div>
-    <div class="flex flex-row justify-center ">
+    <div class="flex flex-row justify-center">
       <div class="flex">
         <div class="flex mr-2 btn btn-xs rounded-none btn-active">
-          <h1 class="mr-2 text-sm" >1</h1>
-         
-          <h1 class="text-sm">
-             CART 
-            </h1>
-           
+          <h1 class="mr-2 text-sm">1</h1>
+
+          <h1 class="text-sm">CART</h1>
         </div>
         <div class="mr-2 text-sm">
-         
-            <h1 class="text-sm btn btn-xs rounded-none btn-active">
-              LOGIN
-              </h1> 
-       
-        
-           <h1 class="text-sm btn btn-xs rounded-none btn-active">
-             PROFILE
-             </h1> 
-       
+          <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
+
+          <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
         </div>
         <div class="text-sm btn btn-xs rounded-none btn-error">LOG OUT</div>
       </div>
     </div>
   </div>
 
-<!-- large navigation bar -->
+  <!-- large navigation bar -->
 
   <div
     class="
@@ -55,18 +58,14 @@
   >
     <div class="navbar bg-white text-black w-11/12" id="nav">
       <div class="px-2 mx-2 navbar-start">
-        <div class="hidden  md:flex lg:flex items-stretch">
+        <div class="hidden md:flex lg:flex items-stretch">
           <!-- <a class="btn btn-ghost btn-sm rounded-btn">
             <router-link to="/">
               <p class="text-green-500">Home</p>
             </router-link>
           </a> -->
-          <a class=" btn btn-ghost btn-sm rounded-btn font-light">
-            Women
-          </a>
-          <a class=" btn btn-ghost btn-sm rounded-btn font-light">
-            Men
-          </a>
+          <a class="btn btn-ghost btn-sm rounded-btn font-light"> Women </a>
+          <a class="btn btn-ghost btn-sm rounded-btn font-light"> Men </a>
         </div>
       </div>
       <router-link to="/">
@@ -97,8 +96,21 @@
               "
               placeholder="Search"
             /> -->
-          
-              <button class="ml-5 btn btn-ghost text-white w-full btn-md rounded-none focus-within:text-white focus:text-white hover:bg-white">
+
+            <router-link to="/cart" class="z-20">
+              <button
+                class="
+                  ml-5
+                  btn btn-ghost
+                  text-white
+                  w-full
+                  btn-md
+                  rounded-none
+                  focus-within:text-white
+                  focus:text-white
+                  hover:bg-white
+                "
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -115,9 +127,7 @@
                   class="
                     relative
                     -mt-5
-                    
                     ml-1
-                    
                     p-1
                     w-5
                     bg-red-500
@@ -126,35 +136,50 @@
                   "
                   v-if="cartCount !== 0"
                 >
-                  {{cartCount}}
+                  {{ cartCount }}
                 </div>
               </button>
-           
-          
-              <button class="ml-1 btn btn-ghost font-light btn-md rounded-none border-0 hover:bg-white">
-               LOGIN
-              </button>
-          
-              <button class="ml-1 btn btn-ghost btn-md rounded-none border-0 hover:bg-white ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="text-red-500"
-                  class="bi bi-person-circle "
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                  />
-                </svg>
-              </button>
-          
+            </router-link>
             <button
-              class="ml-1 btn btn-ghost font-light  btn-md rounded-none"
+              class="
+                ml-1
+                btn btn-ghost
+                font-light
+                btn-md
+                rounded-none
+                border-0
+                hover:bg-white
+              "
             >
+              LOGIN
+            </button>
+
+            <button
+              class="
+                ml-1
+                btn btn-ghost btn-md
+                rounded-none
+                border-0
+                hover:bg-white
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="text-red-500"
+                class="bi bi-person-circle"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path
+                  fill-rule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                />
+              </svg>
+            </button>
+
+            <button class="ml-1 btn btn-ghost font-light btn-md rounded-none">
               LogOut
             </button>
           </div>
