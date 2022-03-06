@@ -45,6 +45,7 @@ export default {
     //   console.log(this.testStatic);
     // })
     console.log(this.$store.state.cartCount);
+    console.log(this.$store.state.products.testCount);
   },
 }
 </script>

@@ -1,9 +1,8 @@
 import { createStore } from 'vuex'
+import productModule from './modules/products'
 
 export default createStore({
-    state() {
-        return {
-            cartCount: 13,
-        }
-    },
+    modules: {
+        products: productModule
+    }
 })
