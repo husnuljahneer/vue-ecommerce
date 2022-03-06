@@ -327,7 +327,7 @@ export default {
       this.$store.dispatch("cart/removeProductFromCart", item);
     },
     clearCart(){
-      this.$router.push("cart/clearCart");
+      this.$store.dispatch("cart/clearCart");
     }
   },
 };

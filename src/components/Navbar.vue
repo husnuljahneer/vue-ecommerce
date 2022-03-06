@@ -22,16 +22,22 @@
     <div class="flex flex-row justify-center">
       <div class="flex">
         <div class="flex mr-2 btn btn-xs rounded-none btn-active">
-          <h1 class="mr-2 text-sm">1</h1>
-
-          <h1 class="text-sm">CART</h1>
+          <h1 class="mr-2 text-sm" v-if="cartCount !== 0">{{ cartCount }}</h1>
+          <router-link to="/cart" class="z-20">
+            <h1 class="text-sm">CART</h1>
+          </router-link>
         </div>
         <div class="mr-2 text-sm">
           <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
-
           <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
         </div>
-        <div class="text-sm btn btn-xs rounded-none btn-error">LOG OUT</div>
+        <div
+          class="text-sm btn btn-xs rounded-none btn-error"
+          v-if="userLoggedIn"
+          @click="logout"
+        >
+          LOG OUT
+        </div>
       </div>
     </div>
   </div>
@@ -196,7 +202,7 @@ export default {
     cartCount() {
       console.log(this.$store.getters["cart/cartItemCount"]);
       return this.$store.getters["cart/cartItemCount"];
-    }
+    },
   },
 };
 </script>
