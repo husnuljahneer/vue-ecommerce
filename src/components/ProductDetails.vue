@@ -95,9 +95,11 @@
       </div>
     </div>
   </div>
+    <RelatedProducts />
 </template>
 
 <script>
+import RelatedProducts from "@/components/RelatedProducts.vue";
 import StarRating from "vue-star-rating";
 
 export default {
@@ -109,6 +111,7 @@ export default {
     };
   },
   components: {
+    RelatedProducts,
     StarRating,
   },
   computed: {
