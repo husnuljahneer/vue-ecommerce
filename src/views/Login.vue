@@ -14,7 +14,7 @@
       "
     >
       <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">// Login</h1>
-      <form class="rounded px-8 pt-6 pb-8 mb-4" >
+      <form class="rounded px-8 pt-6 pb-8 mb-4" @submit="setUser">
         <div class="mb-4">
           <input
             class="
@@ -62,6 +62,7 @@
         </div>
         <div class="flex items-center justify-between">
           <button
+            @click="signin"
             class="
               w-full
               border-2 border-green-500
@@ -92,13 +93,48 @@
 </template>
 
 <script>
-
+import AuthService from "@/Services/AuthService.js";
 export default {
   data() {
-      return {
-
-      }
-  }
+    return {
+      email: "",
+      password: "",
+      userEmail: "",
+      userId: "",
+      //   error: null,
+      //   ExistError: null,
+      accessToken: "",
+      userLoggedIn: null,
+    };
+  },
+  methods: {
+    async signin() {
+      AuthService.login({
+        email: this.email.toLowerCase(),
+        password: this.password,
+      })
+        .then((response) => {
+          localStorage.setItem("accessToken", response.data.accessToken);
+          this.accessToken = response.data.accessToken;
+          this.userEmail = response.data.email;
+          this.userId = response.data.id;
+          this.$store.dispatch("auth/setUser", this.accessToken);
+          this.$store.dispatch("auth/setUserEmail", this.userEmail);
+          this.$store.dispatch("auth/setUserId", this.userId);
+          this.$router.push("/");
+          this.$router.go();
+          //   this.error = response.response.data.message;
+          this.toast.success("Welcome "+this.userEmail);
+         
+        })
+        .catch((error) => {
+          // console.log("This is the response", error);
+          //   this.ExistError = error.response.data.status;
+          alert(
+            error.response.data.message || error.response.data.status);
+        });
+    },
+  },
 };
 </script>
 
