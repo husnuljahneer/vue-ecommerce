@@ -118,14 +118,40 @@
 </template>
 
 <script>
+import AuthService from "@/Services/AuthService.js";
 
+// import Axios from 'axios'
 export default {
-   
-  methods: {
-    signup() {
-        console.log(this.email, this.username, this.password);
-    },
+  data() {
+    return {
+      email: "",
+      password: "",
+      username: "",
+      error: null,
+      ExistError: null,
+    };
   },
+  methods: {
+    async signup() {
+      AuthService.signup({
+        email: this.email,
+        password: this.password,
+        username: this.username,
+      })
+        .then((response) => {
+          console.log("This is the response", response);
+          this.$router.push("/login");
+        alert("You have successfully registered");
+        //   this.error = response.response.data.message;
+        })
+        .catch((error) => {
+          // console.log("This is the response", error);
+        //   this.ExistError = error.response.data.status;
+        //   this.error = error.response.data.message;
+      alert(error.response.data.message || error.response.data.status);
+        });
+    },
+  }
 };
 </script>
 
