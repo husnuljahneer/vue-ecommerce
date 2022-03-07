@@ -1,5 +1,5 @@
 <template >
-  <div class="flex flex-row justify-center  mt-10 sm:mt-0 md:mt-0 lg:mt-0">
+  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0">
     <div class="w-0 sm:w-0 md:w-0 lg:w-1/2 image__reg__div">&nbsp;</div>
     <div
       class="
@@ -13,15 +13,14 @@
         xs:p-1
       "
     >
-     <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-          // Create Account
-        </h1>
+      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
+        // Create Account
+      </h1>
 
       <form class="rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <input
             class="
-             
               placeholder-black
               appearance-none
               border-b-2 border-black
@@ -41,7 +40,6 @@
         <div class="mb-4">
           <input
             class="
-              
               appearance-none
               border-b-2 border-black
               placeholder-black
@@ -61,8 +59,6 @@
         <div class="mb-6">
           <input
             class="
-              
-              
               appearance-none
               border-b-2 border-black
               placeholder-black
@@ -90,9 +86,7 @@
           <button
             @click="signup"
             class="
-              hover:bg-green-500
-              hover:border-green-500
-              hover:text-white
+              hover:bg-green-500 hover:border-green-500 hover:text-white
               text-black
               border-2 border-green-500
               font-semibold
@@ -108,11 +102,12 @@
           </button>
         </div>
       </form>
-       <div class="bottom-40 p-10 static">
-            <p class="text-center text-black text-xl">
-                Already have an account? <router-link to="/login" class="underline">Login</router-link>
-            </p>
-        </div>
+      <div class="bottom-40 p-10 static">
+        <p class="text-center text-black text-xl">
+          Already have an account?
+          <router-link to="/login" class="underline">Login</router-link>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -141,17 +136,24 @@ export default {
         .then((response) => {
           console.log("This is the response", response);
           this.$router.push("/login");
-        alert("You have successfully registered");
-        //   this.error = response.response.data.message;
+          alert("You have successfully registered");
+          //   this.error = response.response.data.message;
         })
         .catch((error) => {
           // console.log("This is the response", error);
-        //   this.ExistError = error.response.data.status;
-        //   this.error = error.response.data.message;
-      alert(error.response.data.message || error.response.data.status);
+          //   this.ExistError = error.response.data.status;
+          //   this.error = error.response.data.message;
+          alert(error.response.data.message || error.response.data.status);
         });
     },
-  }
+    components: {},
+    created() {
+      this.userLoggedIn = this.$store.state.auth.isLoggedIn;
+      if (this.userLoggedIn) {
+        this.$router.push("/");
+      }
+    },
+  },
 };
 </script>
 
