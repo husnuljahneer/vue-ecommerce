@@ -28,13 +28,14 @@
           </router-link>
         </div>
         <div class="mr-2 text-sm">
-          <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
+          <router-link to="/login" class="z-10">
+            <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
+          </router-link>
           <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
         </div>
         <div
           class="text-sm btn btn-xs rounded-none btn-error"
-          v-if="userLoggedIn"
-          @click="logout"
+          
         >
           LOG OUT
         </div>
@@ -146,6 +147,7 @@
                 </div>
               </button>
             </router-link>
+             <router-link to="/login" class="z-10">
             <button
               class="
                 ml-1
@@ -159,7 +161,7 @@
             >
               LOGIN
             </button>
-
+             </router-link>
             <button
               class="
                 ml-1
