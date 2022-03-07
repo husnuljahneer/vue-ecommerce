@@ -15,16 +15,23 @@ const actions = {
         axios.get(baseUrl + "products")
             .then((response) => {
                 commit("SET_PRODUCTS", response.data.products);
+            }).catch((error) => {
+                console.log(error);
             });
     },
     getProductById({ commit }, id) {
-        axios.get(baseUrl + `products/${id}`).then((response) => {
-            commit("SET_PRODUCT", response.data.product);
-        });
+        axios.get(baseUrl + `products/${id}`)
+            .then((response) => {
+                commit("SET_PRODUCT", response.data.product);
+            }).catch((error) => {
+                console.log(error);
+            });
     },
     getUserProducts({ commit }, id) {
         axios.get(baseUrl + `products/userProduct/${id}`).then((response) => {
             commit("GET_USER_PRODUCTS", response.data.products);
+        }).catch((error) => {
+            console.log(error);
         });
     }
 };
