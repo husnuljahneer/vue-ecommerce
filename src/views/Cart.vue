@@ -1,4 +1,4 @@
- <template>
+<template>
   <section class="cart-filled mt-10" v-if="cartItemCount >= 1">
     <div class="flex text-3xl px-10 lg:px-20 md:px-10">// CART</div>
     <div class="flex justify-center my-6">
@@ -301,34 +301,42 @@
   <script>
 export default {
   data() {
-   return{
-     shippingRate:50,
-   }
+    return {
+      userLoggedIn: null,
+      userEmail: "",
+      userId: "",
+      shippingRate: 50,
+    };
   },
   computed: {
-    cart(){
+    cart() {
       return this.$store.state.cart.cart;
     },
     cartTotalPrice() {
-       return this.$store.getters["cart/cartTotalPrice"];
+      return this.$store.getters["cart/cartTotalPrice"];
     },
-    cartItemCount(){
+    cartItemCount() {
       return this.$store.getters["cart/cartItemCount"];
-    }
+    },
   },
   methods: {
-    increaseQty(item){
+    increaseQty(item) {
       this.$store.dispatch("cart/increaseQty", item);
     },
-    decreaseQty(item){
+    decreaseQty(item) {
       this.$store.dispatch("cart/decreaseQty", item);
     },
-    removeProductFromCart(item){
+    removeProductFromCart(item) {
       this.$store.dispatch("cart/removeProductFromCart", item);
     },
-    clearCart(){
+    clearCart() {
       this.$store.dispatch("cart/clearCart");
-    }
+    },
+  },
+  created() {
+    this.userLoggedIn = this.$store.state.auth.isLoggedIn;
+    this.userEmail = this.$store.state.auth.userEmail;
+    this.userId = this.$store.state.auth.userId;
   },
 };
 </script>
