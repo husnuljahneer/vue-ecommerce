@@ -243,8 +243,10 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from "vuex";
 import CartService from "@/Services/CartService.js";
 import { useToast, POSITION } from "vue-toastification";
+
 export default {
   data() {
     return {
@@ -268,15 +270,8 @@ export default {
     return { toast };
   },
   computed: {
-      cart(){
-        return this.$store.state.cart.cart
-      },
-      cartItemCount(){
-        return this.$store.getters['cart/cartItemCount']
-      },
-      cartTotalPrice(){
-        return this.$store.getters['cart/cartTotalPrice']
-      },
+    ...mapState("cart", ["cart"]),
+    ...mapGetters("cart", ["cartItemCount", "cartTotalPrice"]),
   },
   methods: {
     async confirmOrder() {

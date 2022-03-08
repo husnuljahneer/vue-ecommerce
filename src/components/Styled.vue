@@ -4,12 +4,7 @@
       <h1 class="text-lg md:text-2xl">As styled by you @outreach</h1>
     </div>
     <div
-      class="
-        grid grid-cols-2
-        sm:grid-cols-2
-        md:grid-cols-2
-        lg:grid-cols-4
-      "
+      class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
       style="height: 650px"
     >
       <div
@@ -22,7 +17,7 @@
           hover:opacity-80
         "
       ></div>
-       <div
+      <div
         class="
           flex
           h-full
@@ -32,7 +27,7 @@
           hover:opacity-80
         "
       ></div>
-       <div
+      <div
         class="
           flex
           h-full
@@ -42,7 +37,7 @@
           hover:opacity-80
         "
       ></div>
-       <div
+      <div
         class="
           flex
           h-full

@@ -1,6 +1,16 @@
 <template>
   <div
-    class="flex flex-row custom-header w-full items-center mx-auto mt-20 p-0 sm:p-20 md:p-20 lg-20"
+    class="
+      flex flex-row
+      custom-header
+      w-full
+      items-center
+      mx-auto
+      p-0
+      sm:p-20
+      md:p-20
+      lg-20
+    "
   >
     <div class="flex flex-col">
       <div
@@ -9,8 +19,15 @@
           sm:text-white
           md:text-black
           lg:text-black
-          text-center sm:text-left md:text-left lg:text-left text-5xl
-          mx-12 sm:mx-0 md:mx-0 lg:mx-0 
+          text-center
+          sm:text-left
+          md:text-left
+          lg:text-left
+          text-5xl
+          mx-12
+          sm:mx-0
+          md:mx-0
+          lg:mx-0
         "
       >
         Made for everyday, <br />for everyone
@@ -59,3 +76,5 @@ export default {};
   background-position: center;
 }
 </style>
+
+//sample text

@@ -1,15 +1,19 @@
 <template>
-  <div
-    class="mb-7"
-  > 
-
-  <!-- //after loading -->
+  <div class="mb-7">
+    <!-- //after loading -->
 
     <div class="flex justify-end items-start" style="z-index: 1">
       <div class="flex flex-row absolute justify-end space-x-2">
         <button
-          @click="addProductToCart()"
-          class="btn btn-ghost hover:bg-white btn-lg md:btn-lg lg:btn-lg xl:btn-lg"
+          @click="addProductToCart(product)"
+          class="
+            btn btn-ghost
+            hover:bg-white
+            btn-lg
+            md:btn-lg
+            lg:btn-lg
+            xl:btn-lg
+          "
           style="z-index: 2"
         >
           <svg
@@ -27,18 +31,35 @@
           </svg>
         </button>
       </div>
-      <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }" >
-        <img class="h-72 sm:h-96 md:h-full" :src="product.image" alt="" role="img"/>
+      <router-link :to="{ name: 'ProductDetails', params: { id: product.id } }">
+        <img
+          class="h-72 sm:h-96 md:h-full"
+          :src="product.image"
+          alt=""
+          role="img"
+        />
       </router-link>
     </div>
     <div class="flex flex-col sm:flex-row justify-between">
-      <h2 class="text-sm md:text-base text-gray-700 dark:text-white mt-0 sm:mt-5">
+      <h2
+        class="text-sm md:text-base text-gray-700 dark:text-white mt-0 sm:mt-5"
+      >
         <router-link
           :to="{ name: 'ProductDetails', params: { id: product.id } }"
           >{{ product.name }}</router-link
         >
       </h2>
-      <p class="text-2xs md:text-base text-gray-500 font-semibold dark:text-white mt-0 sm:mt-5">
+      <p
+        class="
+          text-2xs
+          md:text-base
+          text-gray-500
+          font-semibold
+          dark:text-white
+          mt-0
+          sm:mt-5
+        "
+      >
         $ {{ product.price }}
       </p>
     </div>
@@ -46,15 +67,14 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: ["product"],
+
   methods: {
-    addProductToCart() {
-      this.$store.dispatch("cart/addProductToCart", this.product);
-    }
+    ...mapActions("cart", ["addProductToCart"]),
   },
-      
-  
 };
 </script>
 

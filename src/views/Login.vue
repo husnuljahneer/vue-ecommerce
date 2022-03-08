@@ -1,6 +1,6 @@
 <template >
-  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0">
-    <div class="w-0 sm:w-0 md:w-0 lg:w-1/2 image__div">&nbsp;</div>
+  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0 ">
+    <div class="w-0  sm:w-0 md:w-0 lg:w-1/2 image__div">&nbsp;</div>
     <div
       class="
         lg:w-1/2
@@ -13,9 +13,7 @@
         xs:p-1
       "
     >
-      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-        // Login
-      </h1>
+      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">// Login</h1>
       <form class="rounded px-8 pt-6 pb-8 mb-4" @submit="setUser">
         <div class="mb-4">
           <input
@@ -82,7 +80,7 @@
           </button>
         </div>
       </form>
-      <div class="bottom-40 p-10 static">
+      <div class="bottom-40 p-10 static ">
         <p class="text-center text-black text-xl">
           Not yet signed up?
           <router-link to="/register" class="underline"
@@ -97,6 +95,8 @@
 <script>
 import AuthService from "@/Services/AuthService.js";
 import { useToast, POSITION } from "vue-toastification";
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -125,15 +125,19 @@ export default {
           this.accessToken = response.data.accessToken;
           this.userEmail = response.data.email;
           this.userId = response.data.id;
+
           this.$store.dispatch("auth/setUser", this.accessToken);
           this.$store.dispatch("auth/setUserEmail", this.userEmail);
           this.$store.dispatch("auth/setUserId", this.userId);
+
           this.$router.push("/");
           this.$router.go();
           //   this.error = response.response.data.message;
-           this.toast.success("Welcome "+this.userEmail, {
+
+          this.toast.success("Welcome "+this.userEmail, {
             position: POSITION.BOTTOM_RIGHT,
           });
+          //   this.toast.info(response.response.data.message);
         })
         .catch((error) => {
           // console.log("This is the response", error);
@@ -144,6 +148,10 @@ export default {
           );
         });
     },
+    ...mapState({
+      // deepcode ignore HardcodedNonCryptoSecret: <Not Hardcoded: Sync Error>
+      accessToken: "auth/user",
+    }),
   },
   components: {},
   created() {

@@ -23,11 +23,19 @@
         "
       >
         <h2
-          class="text-sm  tracking-widest font-medium text-white title-font mb-1"
+          class="text-sm tracking-widest font-medium text-white title-font mb-1"
         >
           SUBSCRIBE
         </h2>
-        <h1 class="md:text-sm text-center text-sm font-medium text-white lg:text-left">
+        <h1
+          class="
+            md:text-sm
+            text-center text-sm
+            font-medium
+            text-white
+            lg:text-left
+          "
+        >
           Exclusive content & weekly update
         </h1>
       </div>

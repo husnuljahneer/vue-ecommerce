@@ -1,5 +1,5 @@
 <template>
-  <section class="cart-filled mt-10" v-if="cartItemCount >= 1">
+  <section class=" cart-filled mt-10" v-if="cartItemCount >= 1">
     <div class="flex text-3xl px-10 lg:px-20 md:px-10">// CART</div>
     <div class="flex justify-center my-6">
       <h2
@@ -47,35 +47,28 @@
             <tbody>
               <tr v-for="item in cart" :key="item.id">
                 <td class="hidden pb-4 md:table-cell">
-                  <img :src="item.image" class="w-24 rounded" alt="Thumbnail" />
+                  
+                    <img
+                      :src="item.image"
+                      class="w-24 rounded"
+                      alt="Thumbnail"
+                    />
+                  
                 </td>
                 <td class="text-left md:text-center">
-                  <p class="mb-2 md:ml-4 text-left md:text-center">
-                    {{ item.name }}
-                  </p>
-                  <button
-                    @click="removeProductFromCart(item)"
-                    type="submit"
-                    class="text-gray-700 md:ml-4"
-                  >
-                    <small>(Remove item)</small>
-                  </button>
+                    <p class="mb-2 md:ml-4 text-left md:text-center">{{ item.name }}</p>
+                    <button
+                      @click="removeProductFromCart(item)"
+                      type="submit"
+                      class="text-gray-700 md:ml-4"
+                    >
+                      <small>(Remove item)</small>
+                    </button>
                 </td>
-                <td class="justify-center md:justify-end md:flex mt-14">
+                <td class="justify-center md:justify-end md:flex mt-14 ">
                   <div class="w-20 h-10">
                     <div class="relative flex flex-row w-full h-8">
-                      <div
-                        class="
-                          custom-number-input
-                          flex
-                          justify-center
-                          h-10
-                          w-20
-                          sm:w-20
-                          md:w-24
-                          lg:w-32
-                        "
-                      >
+                      <div class="custom-number-input flex justify-center h-10 w-20 sm:w-20 md:w-24 lg:w-32">
                         <div
                           class="
                             flex flex-row
@@ -174,6 +167,7 @@
                       m-2
                       text-base
                       lg:text-lg
+                      
                       text-center text-gray-800
                     "
                   >
@@ -183,21 +177,22 @@
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                      l
-                      text-base
+                      l text-base
                       lg:text-lg
+                      
                       text-center text-gray-900
                     "
                   >
                     {{ cartTotalPrice }}.00 $
                   </div>
+                  
                 </div>
-                <div class="flex justify-between border-b">
+                 <div class="flex justify-between border-b">
                   <div
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                      text-base
+                       text-base
                       lg:text-lg
                       text-center text-gray-800
                     "
@@ -208,15 +203,17 @@
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                      text-base
+                       text-base
                       lg:text-lg
+                      
                       text-center text-gray-900
                     "
                   >
-                    {{ shippingRate }}.00 $
+                    {{shippingRate}}.00 $
                   </div>
+                  
                 </div>
-                <div class="flex justify-between border-b">
+                 <div class="flex justify-between border-b">
                   <div
                     class="
                       lg:px-4 lg:py-2
@@ -238,14 +235,16 @@
                       text-center text-gray-900
                     "
                   >
-                    {{ cartTotalPrice + shippingRate }}.00 $
+                    {{ cartTotalPrice + shippingRate}}.00 $
                   </div>
+                  
                 </div>
-
+                
                 <button
                   @click="checkout()"
                   class="
-                    w-full
+                   w-full
+
                     py-4
                     mt-6
                     font-medium
@@ -299,8 +298,10 @@
   </section>
 </template>
 
-  <script>
-  import { useToast } from "vue-toastification";
+<script>
+import { mapActions, mapState, mapGetters } from "vuex";
+import { useToast } from "vue-toastification";
+
 export default {
   data() {
     return {
@@ -315,29 +316,21 @@ export default {
     return { toast };
   },
   computed: {
-    cart() {
-      return this.$store.state.cart.cart;
-    },
-    cartTotalPrice() {
-      return this.$store.getters["cart/cartTotalPrice"];
-    },
-    cartItemCount() {
-      return this.$store.getters["cart/cartItemCount"];
-    },
+    ...mapState("cart", ["cart"]),
+    ...mapGetters("cart", ["cartItemCount", "cartTotalPrice"]),
+    ...mapState({
+      isLoggedIn: "auth/isLoggedIn",
+      userEmail: "auth/userEmail",
+      userId: "auth/userId",
+    }),
   },
   methods: {
-    increaseQty(item) {
-      this.$store.dispatch("cart/increaseQty", item);
-    },
-    decreaseQty(item) {
-      this.$store.dispatch("cart/decreaseQty", item);
-    },
-    removeProductFromCart(item) {
-      this.$store.dispatch("cart/removeProductFromCart", item);
-    },
-    clearCart() {
-      this.$store.dispatch("cart/clearCart");
-    },
+    ...mapActions("cart", [
+      "clearCart",
+      "removeProductFromCart",
+      "increaseQty",
+      "decreaseQty",
+    ]),
     checkout() {
       // this.$store.dispatch("cart/checkout", {
       //   userId: this.userId,
@@ -346,8 +339,9 @@ export default {
       //   cartItemCount:this.$store.getters['cart/cartItemCount'],
       //   cartTotalPrice:this.$store.getters['cart/cartTotalPrice'],
       // });
+
       if (this.userLoggedIn) {
-        this.$router.push("/checkout");
+       this.$router.push("/checkout");
       } else {
         this.$router.push("/login");
       }

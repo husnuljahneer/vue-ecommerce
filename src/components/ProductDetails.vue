@@ -58,9 +58,7 @@
               {{ product.name }}
             </h1>
 
-            <p class="text-sm">
-              {{ product.description }}
-            </p>
+            <p class="text-sm">{{ product.description }}</p>
           </div>
           <div>
             <div class="inline-block align-bottom mr-5">
@@ -99,13 +97,15 @@
 
 <script>
 import RelatedProducts from "@/components/RelatedProducts.vue";
+import { mapActions, mapState } from "vuex";
 import StarRating from "vue-star-rating";
 
 export default {
   props: ["id"],
   data() {
     return {
-      //generate a random number for rating
+      //generate a random number
+
       ratingCount: Math.floor(Math.random() * 6) + 3,
     };
   },
@@ -113,15 +113,12 @@ export default {
     RelatedProducts,
     StarRating,
   },
-  computed: {
-    product() {
-      return this.$store.state.products.product;
-    },
-  },
+
+  computed: mapState({
+    product: (state) => state.products.product,
+  }),
   methods: {
-    addProductToCart(product) {
-      this.$store.dispatch("cart/addProductToCart", product);
-    },
+    ...mapActions("cart", ["addProductToCart"]),
   },
   created() {
     //scroll to top
@@ -134,3 +131,4 @@ export default {
 <style>
 @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
 </style>
+

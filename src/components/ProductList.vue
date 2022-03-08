@@ -11,8 +11,13 @@
         <div
           class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4"
         >
-          <ProductLoadingCard v-if="!products"/>    
-          <ProductCard v-else v-for="product in products" :key="product.id" :product="product"/>
+          <ProductLoadingCard v-if="!products" />
+          <ProductCard
+            v-else
+            v-for="product in products"
+            :key="product.id"
+            :product="product"
+          />
         </div>
       </div>
     </div>
@@ -21,20 +26,19 @@
 
 <script>
 import ProductCard from "@/components/ProductCard.vue";
-import ProductLoadingCard from '@/components/ProductLoadingCard.vue'
+import ProductLoadingCard from "@/components/ProductLoadingCard.vue";
+import { mapState } from "vuex";
 export default {
+  name: "Home",
   components: {
     ProductCard,
-    ProductLoadingCard
+    ProductLoadingCard,
   },
-  computed: {
-    products() {
-      return this.$store.state.products.products;
-    },
-  },
+  computed: mapState({
+    products: (state) => state.products.products,
+  }),
   created() {
-     this.$store.dispatch('products/getAllProducts')
-    console.log("products", this.products);
+    this.$store.dispatch("products/getAllProducts");
   },
 };
 </script>

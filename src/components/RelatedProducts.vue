@@ -21,8 +21,10 @@
     </div>
   </div>
 </template>
+
 <script>
 import ProductCard from "@/components/ProductCard.vue";
+import { mapState } from "vuex";
 export default {
   components: {
     ProductCard,
@@ -33,15 +35,14 @@ export default {
       anotherRandomNumber: "",
     };
   },
-  computed: {
-    products() {
-      return this.$store.state.products.products;
-    },
-  },
+  computed: mapState({
+    products: (state) => state.products.products,
+  }),
   created() {
     this.$store.dispatch("products/getAllProducts");
     this.randomNumber = Math.floor(Math.random() * 10) + 1;
     this.anotherRandomNumber = Math.floor(Math.random() * 20) + 1;
+
     if (this.randomNumber > this.anotherRandomNumber) {
       let temp = this.randomNumber;
       this.randomNumber = this.anotherRandomNumber;
@@ -50,10 +51,10 @@ export default {
     if (this.anotherRandomNumber < 4) {
       this.anotherRandomNumber = this.randomNumber + 4;
     }
-    if(this.randomNumber - this.anotherRandomNumber < 4) {
-    this.anotherRandomNumber = this.randomNumber * 4;
+    if (this.randomNumber - this.anotherRandomNumber < 4) {
+      this.anotherRandomNumber = this.randomNumber * 4;
     }
-    if(this.anotherRandomNumber >20) {
+    if (this.anotherRandomNumber > 20) {
       this.anotherRandomNumber = 12;
     }
     // alert(this.randomNumber);

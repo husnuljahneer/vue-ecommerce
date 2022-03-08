@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import ScrollToTop from "@/components/ScrollToTop.vue";
 import Header from '@/components/Header.vue'
 import TheOpener from '@/components/TheOpener.vue'
@@ -31,6 +30,6 @@ export default {
     Styled,
     // MobileApp,
     Subscribe
-  },
+  }
 }
 </script>

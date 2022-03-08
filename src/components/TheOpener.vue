@@ -2,9 +2,7 @@
   <section>
     <div class="mx-auto h-full w-full mt-10 md:mt-20">
       <div class="flex p-10 sm:p-10 md:p-10 lg:p-10 justify-between">
-        <div
-          class="flex text-left text-xl sm:text-lg md:text-2xl lg:text-3xl"
-        >
+        <div class="flex text-left text-xl sm:text-lg md:text-2xl lg:text-3xl">
           // OUTREACH World
         </div>
         <div
@@ -22,8 +20,15 @@
         </div>
       </div>
       <div
-        class="grid grid-cols-2 px-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2"
-        style="height: 650px;"
+        class="
+          grid grid-cols-2
+          px-1
+          sm:grid-cols-2
+          md:grid-cols-2
+          lg:grid-cols-4
+          gap-2
+        "
+        style="height: 650px"
       >
         <div class="flex flex-col">
           <div
@@ -36,7 +41,9 @@
               hover:opacity-80
             "
           ></div>
-          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">A WARM ESCAPE</div>
+          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">
+            A WARM ESCAPE
+          </div>
         </div>
         <div class="flex flex-col">
           <div
@@ -49,7 +56,9 @@
               hover:opacity-80
             "
           ></div>
-          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">WHERE COMFORT MEETS STYLE</div>
+          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">
+            WHERE COMFORT MEETS STYLE
+          </div>
         </div>
         <div class="flex flex-col">
           <div
@@ -62,7 +71,9 @@
               hover:opacity-80
             "
           ></div>
-          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">BEAUTY STARTS WITHIN</div>
+          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">
+            BEAUTY STARTS WITHIN
+          </div>
         </div>
         <div class="flex flex-col">
           <div
@@ -75,7 +86,9 @@
               hover:opacity-80
             "
           ></div>
-          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">GEARING UP FOR FALL</div>
+          <div class="flex px-1 text-2xs sm:text-lg md:text-lg lg:text-lg">
+            GEARING UP FOR FALL
+          </div>
         </div>
       </div>
     </div>

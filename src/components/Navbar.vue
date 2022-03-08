@@ -16,7 +16,7 @@
       shadow-sm
     "
   >
-    <div class="text-2xl font-serif mb-2 ">
+    <div class="text-2xl font-serif mb-2">
       <router-link to="/" class="z-20"> OUTREACH </router-link>
     </div>
     <div class="flex flex-row justify-center">
@@ -50,7 +50,6 @@
 
   <div
     class="
-    fixed
       hidden
       sm:hidden
       md:flex
@@ -80,7 +79,7 @@
         </div>
       </div>
       <router-link to="/">
-        <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex border-2 border-black">
+        <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex">
           <span class="text-4xl font-medium font-serif text-black">
             OUTREACH
           </span>
@@ -90,10 +89,11 @@
         </div>
       </router-link>
 
-      <div class="navbar-end ">
-        <div class="flex ">
-          <div class="flex ">
+      <div class="navbar-end">
+        <div class="fle">
+          <div class="flex">
             <!-- <input 
+
               type="text"
               class="
               
@@ -207,6 +207,7 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from "vuex";
 export default {
   data() {
     return {
@@ -214,20 +215,19 @@ export default {
       userLoggedIn: null,
     };
   },
+
   computed: {
-    cartCount() {
-      console.log(this.$store.getters["cart/cartItemCount"]);
-      return this.$store.getters["cart/cartItemCount"];
-    },
-    auth() {
-      return this.$store.getters["auth/isLoggedIn"];
-    },
-    products() {
-      return this.$store.state.products.products;
-    },
-    isLoggedIn() {
-      return this.$store.state.auth.isLoggedIn;
-    },
+    ...mapGetters({
+      cartCount: "cart/cartItemCount",
+      products: "products/products",
+      auth: "auth/isLoggedIn",
+    }),
+
+    //  ...mapState("products", ["products"]),
+    ...mapState({
+      products: "products/products",
+      isLoggedIn: "auth/isLoggedIn",
+    }),
     // isLoggedInToken: function () {
     //   return this.$store.state.auth.isLoggedIn;
     // },
