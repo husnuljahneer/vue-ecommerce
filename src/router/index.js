@@ -5,6 +5,7 @@ import Cart from "@/views/Cart.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import ProductDetails from "@/components/ProductDetails.vue";
+import Checkout from "@/views/Checkout.vue";
 
 const routes = [{
         path: "/",
@@ -31,6 +32,12 @@ const routes = [{
         path: "/Register",
         name: "Register",
         component: Register,
+    },
+    {
+        path: "/Checkout",
+        name: "Checkout",
+        component: Checkout,
+        props: true,
     },
     { path: "/:pathMatch(.*)*", name: "NotFound", component: PageNotFound },
 ];

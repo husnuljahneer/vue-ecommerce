@@ -243,6 +243,7 @@
                 </div>
 
                 <button
+                  @click="checkout()"
                   class="
                     w-full
                     py-4
@@ -331,6 +332,20 @@ export default {
     },
     clearCart() {
       this.$store.dispatch("cart/clearCart");
+    },
+    checkout() {
+      // this.$store.dispatch("cart/checkout", {
+      //   userId: this.userId,
+      //   userEmail: this.userEmail,
+      //   cart:this.$store.getters['cart/cart'],
+      //   cartItemCount:this.$store.getters['cart/cartItemCount'],
+      //   cartTotalPrice:this.$store.getters['cart/cartTotalPrice'],
+      // });
+      if (this.userLoggedIn) {
+        this.$router.push("/checkout");
+      } else {
+        this.$router.push("/login");
+      }
     },
   },
   created() {
