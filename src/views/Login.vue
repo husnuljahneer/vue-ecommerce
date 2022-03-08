@@ -96,6 +96,7 @@
 
 <script>
 import AuthService from "@/Services/AuthService.js";
+import { useToast, POSITION } from "vue-toastification";
 export default {
   data() {
     return {
@@ -108,6 +109,10 @@ export default {
       accessToken: "",
       userLoggedIn: null,
     };
+  },
+  setup() {
+    const toast = useToast();
+    return { toast };
   },
   methods: {
     async signin() {
@@ -126,12 +131,17 @@ export default {
           this.$router.push("/");
           this.$router.go();
           //   this.error = response.response.data.message;
-          this.toast.success("Welcome " + this.userEmail);
+           this.toast.success("Welcome "+this.userEmail, {
+            position: POSITION.BOTTOM_RIGHT,
+          });
         })
         .catch((error) => {
           // console.log("This is the response", error);
           //   this.ExistError = error.response.data.status;
-          alert(error.response.data.message || error.response.data.status);
+          this.toast.error(
+            error.response.data.message || error.response.data.status,
+            { position: POSITION.BOTTOM_RIGHT }
+          );
         });
     },
   },

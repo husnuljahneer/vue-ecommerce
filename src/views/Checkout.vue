@@ -244,6 +244,7 @@
 
 <script>
 import CartService from "@/Services/CartService.js";
+import { useToast, POSITION } from "vue-toastification";
 export default {
   data() {
     return {
@@ -261,6 +262,10 @@ export default {
       countDown: Math.floor(10),
       secondsCountDown: Math.floor(60),
     };
+  },
+  setup() {
+    const toast = useToast();
+    return { toast };
   },
   computed: {
       cart(){
@@ -290,7 +295,9 @@ export default {
         .then((response) => {
           //clear cart
           this.$store.dispatch("cart/clearCart");
-          alert(response.data.message);
+          this.toast.success(response.data.message, {
+            position: POSITION.BOTTOM_RIGHT,
+          });
            this.$router.push("/profile");
         })
         .catch((error) => {
@@ -298,7 +305,10 @@ export default {
           // console.log(
           //   error.response.data.status || error.response.data.message
           // );
-         alert(error.response.data.message || error.response.data.status);
+          this.toast.error(
+            error.response.data.message || error.response.data.status,
+            { position: POSITION.BOTTOM_RIGHT }
+          );
         });
     },
     startTimer() {

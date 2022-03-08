@@ -1,5 +1,5 @@
 import axios from "axios";
-import baseUrl from '../../Services/Base';
+import baseUrl from "../../Services/Base";
 
 const state = () => ({
     products: [],
@@ -12,28 +12,35 @@ const getters = {
 
 const actions = {
     getAllProducts({ commit }) {
-        axios.get(baseUrl + "products")
+        axios
+            .get(baseUrl + "products")
             .then((response) => {
                 commit("SET_PRODUCTS", response.data.products);
-            }).catch((error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     },
     getProductById({ commit }, id) {
-        axios.get(baseUrl + `products/${id}`)
+        axios
+            .get(baseUrl + `products/${id}`)
             .then((response) => {
                 commit("SET_PRODUCT", response.data.product);
-            }).catch((error) => {
+            })
+            .catch((error) => {
                 console.log(error);
             });
     },
     getUserProducts({ commit }, id) {
-        axios.get(baseUrl + `products/userProduct/${id}`).then((response) => {
-            commit("GET_USER_PRODUCTS", response.data.products);
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
+        axios
+            .get(baseUrl + `products/userProduct/${id}`)
+            .then((response) => {
+                commit("GET_USER_PRODUCTS", response.data.products);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    },
 };
 
 const mutations = {

@@ -300,6 +300,7 @@
 </template>
 
   <script>
+  import { useToast } from "vue-toastification";
 export default {
   data() {
     return {
@@ -308,6 +309,10 @@ export default {
       userId: "",
       shippingRate: 50,
     };
+  },
+  setup() {
+    const toast = useToast();
+    return { toast };
   },
   computed: {
     cart() {

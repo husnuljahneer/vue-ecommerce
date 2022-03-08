@@ -114,7 +114,7 @@
 
 <script>
 import AuthService from "@/Services/AuthService.js";
-
+import { useToast, POSITION } from "vue-toastification";
 // import Axios from 'axios'
 export default {
   data() {
@@ -126,6 +126,10 @@ export default {
       ExistError: null,
     };
   },
+  setup() {
+    const toast = useToast();
+    return { toast };
+  },
   methods: {
     async signup() {
       AuthService.signup({
@@ -136,14 +140,14 @@ export default {
         .then((response) => {
           console.log("This is the response", response);
           this.$router.push("/login");
-          alert("You have successfully registered");
+           this.toast.success("You have successfully registered", { position: POSITION.BOTTOM_RIGHT });
           //   this.error = response.response.data.message;
         })
         .catch((error) => {
           // console.log("This is the response", error);
           //   this.ExistError = error.response.data.status;
           //   this.error = error.response.data.message;
-          alert(error.response.data.message || error.response.data.status);
+          this.toast.error(error.response.data.message || error.response.data.status, { position: POSITION.BOTTOM_RIGHT });
         });
     },
     components: {},

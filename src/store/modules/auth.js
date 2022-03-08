@@ -1,3 +1,7 @@
+import { useToast, POSITION } from 'vue-toastification'
+
+const toast = useToast()
+
 const state = () => ({
     accessToken: [],
     userEmail: '',
@@ -28,6 +32,7 @@ const mutations = {
     SET_ACCESS_TOKEN(state, accessToken) {
         state.accessToken = accessToken;
         state.isLoggedIn = true;
+        // toast.success(accessToken, { position: POSITION.BOTTOM_RIGHT });
     },
     SET_USER_EMAIL(state, email) {
         state.userEmail = email;
@@ -41,7 +46,7 @@ const mutations = {
         state.isLoggedIn = false;
         state.userEmail = '';
         state.userId = '';
-        alert('Logged out');
+        toast.error('Logged out', { position: POSITION.BOTTOM_RIGHT });
     }
 };
 
