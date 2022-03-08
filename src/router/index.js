@@ -39,7 +39,7 @@ const routes = [{
         },
     },
     {
-        path: "/Invoice/userId=:userId&order_id=:order_id",
+        path: "/Invoice/order_id=:order_id",
         name: "Invoice",
         component: Invoice,
         props: true,

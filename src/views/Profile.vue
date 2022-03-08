@@ -182,7 +182,7 @@
                   <router-link
                     :to="{
                       name: 'Invoice',
-                      params: { userId: userId, order_id: item.order_id },
+                      params: { order_id: item.order_id },
                     }"
                   >
                     <p class="text-blue-500 whitespace-no-wrap font-semibold">

@@ -6,5 +6,8 @@ export default {
     },
     getUserProducts(id) {
         return Api().get(`products/userProducts/${id}`);
+    },
+    getInvoice(id, order_id) {
+        return Api().get(`products/invoice/userId=${id}&orderId=${order_id}`);
     }
 };
