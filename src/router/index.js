@@ -6,6 +6,7 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import ProductDetails from "@/components/ProductDetails.vue";
 import Checkout from "@/views/Checkout.vue";
+import Profile from "@/views/Profile.vue";
 import store from "@/store";
 
 const routes = [{
@@ -33,6 +34,14 @@ const routes = [{
         path: "/Register",
         name: "Register",
         component: Register,
+    },
+    {
+        path: "/profile",
+        name: "profile",
+        component: Profile,
+        meta: {
+            requiresAuth: true,
+        },
     },
     {
         path: "/Checkout",
