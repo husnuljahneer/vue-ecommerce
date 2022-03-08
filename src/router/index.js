@@ -7,6 +7,7 @@ import Checkout from "@/views/Checkout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Profile from "@/views/Profile.vue";
+import Invoice from "@/views/Invoice.vue";
 import store from "@/store";
 
 const routes = [{
@@ -33,6 +34,15 @@ const routes = [{
         path: "/profile",
         name: "profile",
         component: Profile,
+        meta: {
+            requiresAuth: true,
+        },
+    },
+    {
+        path: "/Invoice/userId=:userId&order_id=:order_id",
+        name: "Invoice",
+        component: Invoice,
+        props: true,
         meta: {
             requiresAuth: true,
         },

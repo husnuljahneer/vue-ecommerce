@@ -50,6 +50,7 @@
 
   <div
     class="
+    sticky
       hidden
       sm:hidden
       md:flex

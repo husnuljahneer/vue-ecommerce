@@ -1,7 +1,12 @@
 <template>
   <section v-if="this.userProducts.length > 1">
-    <div class="flex flex-col items-center justify-between pb-6 mt-40 h-window">
-      <h1 class="text-lg sm:text-lg md:text-3xl lg:text-6xl">ORDER HISTORY</h1>
+    <div class="flex flex-col pb-6 h-window p-10">
+      <div class="flex flex-row justify-between">
+        <h1 class="text-lg sm:text-lg md:text-3xl lg:text-3xl text-left">
+          Order History
+        </h1>
+        <p class="text-md text-right w-3/4 font-semibold">Hi, <span class="text-yellow-600 font-normal uppercase">{{ userEmail.split('@')[0] }}</span></p>
+      </div>
       <div class="-mx-4 sm:-mx-8 w-full px-0 sm:px-4 md:px-4 lg:px-4 py-4">
         <div class="inline-block w-full overflow-hidden">
           <table class="min-w-full leading-normal">
@@ -9,14 +14,13 @@
               <tr>
                 <th
                   class="
+                    rounded-tl-2xl
                     px-5
-                    py-3
+                    py-4
                     border-b-2 border-gray-200
-                    bg-gray-100
-                    text-left text-xs
-                    font-semibold
-                    text-gray-600
-                    uppercase
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
                     tracking-wider
                   "
                 >
@@ -25,13 +29,11 @@
                 <th
                   class="
                     px-5
-                    py-3
+                    py-4
                     border-b-2 border-gray-200
-                    bg-gray-100
-                    text-left text-xs
-                    font-semibold
-                    text-gray-600
-                    uppercase
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
                     tracking-wider
                   "
                 >
@@ -39,14 +41,13 @@
                 </th>
                 <th
                   class="
+                     
                     px-5
-                    py-3
+                    py-4
                     border-b-2 border-gray-200
-                    bg-gray-100
-                    text-left text-xs
-                    font-semibold
-                    text-gray-600
-                    uppercase
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
                     tracking-wider
                   "
                 >
@@ -54,23 +55,51 @@
                 </th>
                 <th
                   class="
+                      
                     px-5
-                    py-3
+                    py-4
                     border-b-2 border-gray-200
-                    bg-gray-100
-                    text-left text-xs
-                    font-semibold
-                    text-gray-600
-                    uppercase
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
                     tracking-wider
                   "
                 >
                   Price
                 </th>
+                <th
+                  class="
+                     
+                    rounded-tr-2xl
+                    px-5
+                    py-4
+                    border-b-2 border-gray-200
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
+                    tracking-wider
+                  "
+                >
+                  Status
+                </th>
+                <th
+                  class="
+                    rounded-tr-2xl
+                    px-5
+                    py-4
+                    border-b-2 border-gray-200
+                    bg-white
+                    text-left text-xs text-black
+                    font-bold
+                    tracking-wider
+                  "
+                >
+                  Invoice
+                </th>
               </tr>
             </thead>
-            <tbody>
-              <tr v-for="item in userProducts" :key="item.id">
+            <tbody >
+              <tr v-for="item in userProducts" :key="item.id" >
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <div class="flex items-center">
                     <div class="ml-3">
@@ -97,6 +126,7 @@
                 </td>
                 <td
                   class="
+                     
                     px-5
                     py-5
                     border-b
@@ -112,6 +142,7 @@
                 </td>
                 <td
                   class="
+                    
                     px-5
                     py-5
                     border-b
@@ -122,8 +153,42 @@
                   "
                 >
                   <p class="text-gray-900 whitespace-no-wrap">
-                    {{ item.price }}
+                    $ {{ item.price }}.00
                   </p>
+                </td>
+                <td
+                  class="
+                     
+                    px-5
+                    py-5
+                    border-b
+                    text-left
+                    border-gray-200
+                    bg-white
+                    text-sm
+                  "
+                >
+                  <p class="text-green-500 whitespace-no-wrap">Shipped</p>
+                </td>
+                <td
+                  class="
+                    px-5
+                    py-5
+                    border-b
+                    text-left
+                    border-gray-200
+                    bg-white
+                    text-sm
+                  "
+                >
+                  <router-link
+                    :to="{
+                      name: 'Invoice',
+                      params: { userId: userId, order_id: item.order_id },
+                    }"
+                  >
+                    <p class="text-blue-500 whitespace-no-wrap font-semibold">View</p>
+                  </router-link>
                 </td>
               </tr>
             </tbody>
@@ -172,6 +237,7 @@ export default {
     return {
       userProducts: [],
       userId: this.$store.state.auth.userId,
+      userEmail: this.$store.state.auth.userEmail,
       userLoggedIn: this.$store.state.auth.isLoggedIn,
     };
   },
@@ -196,6 +262,6 @@ export default {
   },
   created() {
     this.getUserProducts(this.userId);
-  },
+  }
 };
 </script>
