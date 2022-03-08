@@ -5,7 +5,12 @@
         <h1 class="text-lg sm:text-lg md:text-3xl lg:text-3xl text-left">
           Order History
         </h1>
-        <p class="text-md text-right w-3/4 font-semibold">Hi, <span class="text-yellow-600 font-normal uppercase">{{ userEmail.split('@')[0] }}</span></p>
+        <p class="text-md text-right w-3/4 font-semibold">
+          Hi,
+          <span class="text-yellow-600 font-normal uppercase">{{
+            userEmail.split("@")[0]
+          }}</span>
+        </p>
       </div>
       <div class="-mx-4 sm:-mx-8 w-full px-0 sm:px-4 md:px-4 lg:px-4 py-4">
         <div class="inline-block w-full overflow-hidden">
@@ -18,7 +23,7 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -31,7 +36,7 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -41,11 +46,10 @@
                 </th>
                 <th
                   class="
-                     
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -55,11 +59,10 @@
                 </th>
                 <th
                   class="
-                      
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -69,12 +72,10 @@
                 </th>
                 <th
                   class="
-                     
-                    rounded-tr-2xl
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -88,7 +89,7 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    bg-white
+                    bg-gray-100
                     text-left text-xs text-black
                     font-bold
                     tracking-wider
@@ -98,12 +99,12 @@
                 </th>
               </tr>
             </thead>
-            <tbody >
-              <tr v-for="item in userProducts" :key="item.id" >
+            <tbody>
+              <tr v-for="item in userProducts" :key="item.id">
                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                   <div class="flex items-center">
                     <div class="ml-3">
-                      <p class="text-gray-900 whitespace-no-wrap">
+                      <p class="text-black font-bold whitespace-no-wrap">
                         {{ item.order_id }}
                       </p>
                     </div>
@@ -126,7 +127,6 @@
                 </td>
                 <td
                   class="
-                     
                     px-5
                     py-5
                     border-b
@@ -142,7 +142,6 @@
                 </td>
                 <td
                   class="
-                    
                     px-5
                     py-5
                     border-b
@@ -158,7 +157,6 @@
                 </td>
                 <td
                   class="
-                     
                     px-5
                     py-5
                     border-b
@@ -187,7 +185,9 @@
                       params: { userId: userId, order_id: item.order_id },
                     }"
                   >
-                    <p class="text-blue-500 whitespace-no-wrap font-semibold">View</p>
+                    <p class="text-blue-500 whitespace-no-wrap font-semibold">
+                      View
+                    </p>
                   </router-link>
                 </td>
               </tr>
@@ -262,6 +262,6 @@ export default {
   },
   created() {
     this.getUserProducts(this.userId);
-  }
+  },
 };
 </script>
