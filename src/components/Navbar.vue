@@ -16,7 +16,7 @@
       shadow-sm
     "
   >
-    <div class="text-2xl font-serif mb-2">
+    <div class="text-2xl font-serif mb-2 ">
       <router-link to="/" class="z-20"> OUTREACH </router-link>
     </div>
     <div class="flex flex-row justify-center">
@@ -50,6 +50,7 @@
 
   <div
     class="
+    fixed
       hidden
       sm:hidden
       md:flex
@@ -79,7 +80,7 @@
         </div>
       </div>
       <router-link to="/">
-        <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex">
+        <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex border-2 border-black">
           <span class="text-4xl font-medium font-serif text-black">
             OUTREACH
           </span>
@@ -89,9 +90,9 @@
         </div>
       </router-link>
 
-      <div class="navbar-end">
-        <div class="fle">
-          <div class="flex">
+      <div class="navbar-end ">
+        <div class="flex ">
+          <div class="flex ">
             <!-- <input 
               type="text"
               class="

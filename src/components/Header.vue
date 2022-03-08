@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-row custom-header w-full items-center mx-auto p-0 sm:p-20 md:p-20 lg-20"
+    class="flex flex-row custom-header w-full items-center mx-auto mt-20 p-0 sm:p-20 md:p-20 lg-20"
   >
     <div class="flex flex-col">
       <div

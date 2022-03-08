@@ -6,6 +6,7 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import ProductDetails from "@/components/ProductDetails.vue";
 import Checkout from "@/views/Checkout.vue";
+import store from "@/store";
 
 const routes = [{
         path: "/",
@@ -38,6 +39,9 @@ const routes = [{
         name: "Checkout",
         component: Checkout,
         props: true,
+        meta: {
+            requiresAuth: true,
+        },
     },
     { path: "/:pathMatch(.*)*", name: "NotFound", component: PageNotFound },
 ];
@@ -46,5 +50,18 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+        if (store.state.auth.isLoggedIn) {
+            next();
+        } else {
+            next("/login");
+        }
+    } else {
+        next();
+    }
+});
+
 
 export default router;
