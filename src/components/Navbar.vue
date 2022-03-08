@@ -28,14 +28,17 @@
           </router-link>
         </div>
         <div class="mr-2 text-sm">
-          <router-link to="/login" class="z-10">
+          <router-link v-if="!userLoggedIn" to="/login" class="z-10">
             <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
           </router-link>
-          <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
+          <router-link v-if="userLoggedIn" to="/profile" class="z-10">
+            <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
+          </router-link>
         </div>
         <div
           class="text-sm btn btn-xs rounded-none btn-error"
-          
+          v-if="userLoggedIn"
+          @click="logout"
         >
           LOG OUT
         </div>
@@ -103,7 +106,6 @@
               "
               placeholder="Search"
             /> -->
-
             <router-link to="/cart" class="z-20">
               <button
                 class="
@@ -147,47 +149,52 @@
                 </div>
               </button>
             </router-link>
-             <router-link to="/login" class="z-10">
-            <button
-              class="
-                ml-1
-                btn btn-ghost
-                font-light
-                btn-md
-                rounded-none
-                border-0
-                hover:bg-white
-              "
-            >
-              LOGIN
-            </button>
-             </router-link>
-            <button
-              class="
-                ml-1
-                btn btn-ghost btn-md
-                rounded-none
-                border-0
-                hover:bg-white
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="text-red-500"
-                class="bi bi-person-circle"
-                viewBox="0 0 16 16"
+            <router-link v-if="!userLoggedIn" to="/login" class="z-10">
+              <button
+                class="
+                  ml-1
+                  btn btn-ghost
+                  font-light
+                  btn-md
+                  rounded-none
+                  border-0
+                  hover:bg-white
+                "
               >
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path
-                  fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-                />
-              </svg>
-            </button>
-
-            <button class="ml-1 btn btn-ghost font-light btn-md rounded-none">
+                LOGIN
+              </button>
+            </router-link>
+            <router-link v-else-if="userLoggedIn" to="/profile" class="z-10">
+              <button
+                class="
+                  ml-1
+                  btn btn-ghost btn-md
+                  rounded-none
+                  border-0
+                  hover:bg-white
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="text-red-500"
+                  class="bi bi-person-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  />
+                </svg>
+              </button>
+            </router-link>
+            <button
+              v-if="userLoggedIn"
+              @click="logout"
+              class="ml-1 btn btn-ghost font-light btn-md rounded-none"
+            >
               LogOut
             </button>
           </div>
@@ -200,11 +207,39 @@
 
 <script>
 export default {
+  data() {
+    return {
+      search: "",
+      userLoggedIn: null,
+    };
+  },
   computed: {
     cartCount() {
       console.log(this.$store.getters["cart/cartItemCount"]);
       return this.$store.getters["cart/cartItemCount"];
     },
+    auth() {
+      return this.$store.getters["auth/isLoggedIn"];
+    },
+    products() {
+      return this.$store.state.products.products;
+    },
+    isLoggedIn() {
+      return this.$store.state.auth.isLoggedIn;
+    },
+    // isLoggedInToken: function () {
+    //   return this.$store.state.auth.isLoggedIn;
+    // },
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("auth/logout");
+      //refresh page
+      this.$router.go();
+    },
+  },
+  created() {
+    this.userLoggedIn = this.$store.state.auth.isLoggedIn;
   },
 };
 </script>
