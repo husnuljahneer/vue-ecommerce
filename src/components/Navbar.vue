@@ -69,11 +69,6 @@
     <div class="navbar bg-white text-black w-11/12" id="nav">
       <div class="px-2 mx-2 navbar-start">
         <div class="hidden md:flex lg:flex items-stretch">
-          <!-- <a class="btn btn-ghost btn-sm rounded-btn">
-            <router-link to="/">
-              <p class="text-green-500">Home</p>
-            </router-link>
-          </a> -->
           <a class="btn btn-ghost btn-sm rounded-btn font-light"> Women </a>
           <a class="btn btn-ghost btn-sm rounded-btn font-light"> Men </a>
         </div>
@@ -83,30 +78,12 @@
           <span class="text-4xl font-medium font-serif text-black">
             OUTREACH
           </span>
-          <!-- <span class="text-4xl font-medium text-yellow-600 font-serif">
-          reach
-        </span> -->
         </div>
       </router-link>
 
       <div class="navbar-end">
         <div class="fle">
           <div class="flex">
-            <!-- <input 
-
-              type="text"
-              class="
-              
-                lg:flex
-                hidden
-                border-1
-                rounded-full
-                bg-gray-100
-                input
-                h-full
-              "
-              placeholder="Search"
-            /> -->
             <router-link to="/cart" class="z-20">
               <button
                 class="
@@ -222,20 +199,14 @@ export default {
       products: "products/products",
       auth: "auth/isLoggedIn",
     }),
-
-    //  ...mapState("products", ["products"]),
     ...mapState({
       products: "products/products",
       isLoggedIn: "auth/isLoggedIn",
     }),
-    // isLoggedInToken: function () {
-    //   return this.$store.state.auth.isLoggedIn;
-    // },
   },
   methods: {
     logout() {
       this.$store.dispatch("auth/logout");
-      //refresh page
       this.$router.go();
     },
   },

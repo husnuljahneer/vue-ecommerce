@@ -1,5 +1,5 @@
 <template >
-  <div class="flex flex-row justify-center  mt-10 sm:mt-0 md:mt-0 lg:mt-0">
+  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0">
     <div class="w-0 sm:w-0 md:w-0 lg:w-1/2 image__reg__div">&nbsp;</div>
     <div
       class="
@@ -13,15 +13,14 @@
         xs:p-1
       "
     >
-     <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-          // Create Account
-        </h1>
+      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
+        // Create Account
+      </h1>
 
       <form class="rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <input
             class="
-             
               placeholder-black
               appearance-none
               border-b-2 border-black
@@ -41,7 +40,6 @@
         <div class="mb-4">
           <input
             class="
-              
               appearance-none
               border-b-2 border-black
               placeholder-black
@@ -61,8 +59,6 @@
         <div class="mb-6">
           <input
             class="
-              
-              
               appearance-none
               border-b-2 border-black
               placeholder-black
@@ -78,21 +74,12 @@
             placeholder="Password"
             v-model="password"
           />
-
-          <!-- <p class="mt-4 text-red-500 text-xs italic">
-            {{ ExistError }}
-          </p>
-          <p class="mt-4 text-red-500 text-xs italic">
-            {{ error }}
-          </p> -->
         </div>
         <div class="flex items-center justify-between">
           <button
             @click="signup"
             class="
-              hover:bg-green-500
-              hover:border-green-500
-              hover:text-white
+              hover:bg-green-500 hover:border-green-500 hover:text-white
               text-black
               border-2 border-green-500
               font-semibold
@@ -108,19 +95,19 @@
           </button>
         </div>
       </form>
-       <div class="bottom-40 p-10 static">
-            <p class="text-center text-black text-xl">
-                Already have an account? <router-link to="/login" class="underline">Login</router-link>
-            </p>
-        </div>
+      <div class="bottom-40 p-10 static">
+        <p class="text-center text-black text-xl">
+          Already have an account?
+          <router-link to="/login" class="underline">Login</router-link>
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import AuthService from "@/Services/AuthService.js";
-import { useToast,POSITION } from "vue-toastification";
-// import Axios from 'axios'
+import { useToast, POSITION } from "vue-toastification";
 
 export default {
   data() {
@@ -132,10 +119,10 @@ export default {
       ExistError: null,
     };
   },
-   setup() {
-      const toast = useToast();
-      return { toast }
-    },
+  setup() {
+    const toast = useToast();
+    return { toast };
+  },
   methods: {
     async signup() {
       AuthService.signup({
@@ -146,19 +133,20 @@ export default {
         .then((response) => {
           console.log("This is the response", response);
           this.$router.push("/login");
-          this.toast.success("You have successfully registered", { position: POSITION.BOTTOM_RIGHT });
-        //   this.error = response.response.data.message;
+          this.toast.success("You have successfully registered", {
+            position: POSITION.BOTTOM_RIGHT,
+          });
         })
         .catch((error) => {
-          // console.log("This is the response", error);
-        //   this.ExistError = error.response.data.status;
-        //   this.error = error.response.data.message;
-        this.toast.error(error.response.data.message || error.response.data.status, { position: POSITION.BOTTOM_RIGHT });
+          this.toast.error(
+            error.response.data.message || error.response.data.status,
+            { position: POSITION.BOTTOM_RIGHT }
+          );
         });
     },
   },
   components: {},
-   created() {
+  created() {
     this.userLoggedIn = this.$store.state.auth.isLoggedIn;
     if (this.userLoggedIn) {
       this.$router.push("/");

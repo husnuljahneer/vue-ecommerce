@@ -57,8 +57,6 @@ export default {
     if (this.anotherRandomNumber > 20) {
       this.anotherRandomNumber = 12;
     }
-    // alert(this.randomNumber);
-    // alert(this.anotherRandomNumber);
   },
 };
 </script>

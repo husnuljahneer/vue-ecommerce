@@ -104,8 +104,6 @@ export default {
   props: ["id"],
   data() {
     return {
-      //generate a random number
-
       ratingCount: Math.floor(Math.random() * 6) + 3,
     };
   },
@@ -121,7 +119,6 @@ export default {
     ...mapActions("cart", ["addProductToCart"]),
   },
   created() {
-    //scroll to top
     window.scrollTo(0, 0);
     this.$store.dispatch("products/getProductById", this.id);
   },

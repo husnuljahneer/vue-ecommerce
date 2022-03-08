@@ -332,14 +332,6 @@ export default {
       "decreaseQty",
     ]),
     checkout() {
-      // this.$store.dispatch("cart/checkout", {
-      //   userId: this.userId,
-      //   userEmail: this.userEmail,
-      //   cart:this.$store.getters['cart/cart'],
-      //   cartItemCount:this.$store.getters['cart/cartItemCount'],
-      //   cartTotalPrice:this.$store.getters['cart/cartTotalPrice'],
-      // });
-
       if (this.userLoggedIn) {
        this.$router.push("/checkout");
       } else {
