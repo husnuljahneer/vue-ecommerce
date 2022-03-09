@@ -14,7 +14,7 @@
       "
     >
       <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-        // Login
+        Login
       </h1>
       <form class="rounded px-8 pt-6 pb-8 mb-4" @submit="setUser">
         <div class="mb-4">
@@ -154,9 +154,10 @@ export default {
 
 <style>
 .image__div {
-  background-image: url("https://images.unsplash.com/photo-1637499948395-9b4bb51c76a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80");
+  background-image: url("../assets/login.png");
   height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 </style>

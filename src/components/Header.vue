@@ -16,9 +16,6 @@
       <div
         class="
           text-white
-          sm:text-white
-          md:text-black
-          lg:text-black
           text-center
           sm:text-left
           md:text-left
@@ -48,7 +45,7 @@
         <a
           class="
             btn btn-outline
-            hover:bg-green-500
+            hover:bg-yellow-500
             bg-white
             border-0
             hover:border-opacity-0

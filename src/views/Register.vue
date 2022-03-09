@@ -14,7 +14,7 @@
       "
     >
       <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-        // Create Account
+        Create Account
       </h1>
 
       <form class="rounded px-8 pt-6 pb-8 mb-4">
@@ -157,10 +157,11 @@ export default {
 
 <style>
 .image__reg__div {
-  background-image: url("https://i.imgur.com/573cwHY.jpg");
+  background-image: url("../assets/register.png");
   height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 </style>
 

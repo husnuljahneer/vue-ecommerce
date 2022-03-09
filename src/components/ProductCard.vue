@@ -9,6 +9,7 @@
           class="
             btn btn-ghost
             hover:bg-white
+            
             btn-lg
             md:btn-lg
             lg:btn-lg
@@ -20,8 +21,8 @@
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
-            fill="currentColor"
-            class="bi bi-bag-plus-fill text-green-500"
+            fill="currentColor "
+            class="bi bi-bag-plus-fill text-yellow-500"
             viewBox="0 0 16 16"
           >
             <path
@@ -42,7 +43,7 @@
     </div>
     <div class="flex flex-col sm:flex-row justify-between">
       <h2
-        class="text-sm md:text-base text-gray-700 dark:text-white mt-0 sm:mt-5"
+        class="text-sm md:text-base text-black dark:text-white mt-0 sm:mt-5 font-normal"
       >
         <router-link
           :to="{ name: 'ProductDetails', params: { id: product.id } }"
@@ -53,7 +54,6 @@
         class="
           text-2xs
           md:text-base
-          text-gray-500
           font-semibold
           dark:text-white
           mt-0

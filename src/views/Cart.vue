@@ -280,20 +280,10 @@
       "
     >
       <img
-        class="lg:w-1/5 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
-        alt="hero"
-        src="https://i.imgur.com/ztqw8L5.png"
+        class="mb-10 max-h-96 pointer-events-none select-none"
+        alt="empty_cart"
+        src="../assets/empty_cart.png"
       />
-      <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-        <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
-        >
-          Your cart is empty
-        </h1>
-        <p class="mb-8 leading-relaxed">
-          You have no items in your shopping cart. Let's go buy something.
-        </p>
-      </div>
     </div>
   </section>
 </template>
