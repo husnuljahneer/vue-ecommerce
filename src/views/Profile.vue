@@ -209,7 +209,7 @@
     v-if="this.userProducts.length > 1"
     style="background-color: #100d07; min-height: 60vh"
   >
-    <div class="flex flex-col pb-6 h-window p-10">
+    <div class="flex flex-col pb-6 h-window p-10 ">
       <div class="flex flex-col">
         <p class="text-md text-left text-white w-3/4 font-semibold">
           Hi,
