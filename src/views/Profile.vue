@@ -1,30 +1,35 @@
 <template>
-  <section class="hidden md:block"
+  <section
+    class="hidden md:block"
     v-if="this.userProducts.length > 1"
-    style="background-color: #100d07; min-height: 60vh"
+    style="min-height: 60vh"
   >
     <div class="flex flex-col pb-6 h-window p-10">
       <div class="flex flex-col">
-        <p class="text-md text-left text-white w-3/4 font-semibold">
-          Hi,
-          <span class="text-yellow-600 font-normal uppercase">{{
-            userEmail.split("@")[0]
-          }}</span>
-        </p>
-        <h1
-          class="
-            text-md text-left
-            sm:text-lg
-            md:text-3xl
-            lg:text3xl
-            text-white
-            font-serif
-          "
+        <div
+          class="w-full mx-auto rounded-2xl px-8 py-6 shadow-lg"
+          style="background-color: rgb(7 5 1)"
         >
-          Order History
-        </h1>
+          <div class="mt-6 w-fit mx-auto">
+            <img
+              src="https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe"
+              class="rounded-full w-28"
+              alt="profile picture"
+              srcset=""
+            />
+          </div>
+
+          <div class="mt-8">
+            <h2 class="text-white font-bold text-lg text-left tracking-wide">
+              {{ this.userEmail.split("@")[0] }}
+            </h2>
+          </div>
+        </div>
       </div>
       <div class="-mx-4 sm:-mx-8 w-full px-0 sm:px-4 md:px-4 lg:px-4 py-10">
+        <h1 class="text-lg text-left text-black mb-10 px-5">
+          Order History ({{ userProducts.length }} )
+        </h1>
         <div class="inline-block w-full overflow-hidden">
           <table class="min-w-full leading-normal">
             <thead>
@@ -205,13 +210,13 @@
   </section>
 
   <section
-  class="flex md:hidden"
+    class="flex md:hidden"
     v-if="this.userProducts.length > 1"
-    style="background-color: #100d07; min-height: 60vh"
+    style="min-height: 60vh"
   >
-    <div class="flex flex-col pb-6 h-window p-10 ">
+    <div class="flex flex-col pb-6 h-window p-10">
       <div class="flex flex-col">
-        <p class="text-md text-left text-white w-3/4 font-semibold">
+        <p class="text-md text-left text-black w-3/4 font-semibold">
           Hi,
           <span class="text-yellow-600 font-normal uppercase">{{
             userEmail.split("@")[0]
@@ -301,7 +306,7 @@
                     {{ item.product_name }}
                   </p>
                 </td>
-               
+
                 <td
                   class="
                     px-5
@@ -335,7 +340,7 @@
   <section class="text-gray-600 body-font" v-else>
     <div
       class="mx-auto flex flex-col p-20 items-center"
-      style="background-color: #100d07"
+      style="background-color: rgb(7 5 1)"
     >
       <div class="flex flex-row justify-between">
         <p class="text-md w-3/4 font-semibold">

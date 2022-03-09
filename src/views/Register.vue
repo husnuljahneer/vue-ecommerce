@@ -1,5 +1,5 @@
 <template >
-  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0">
+  <div class="flex flex-row justify-center mt-32 sm:mt-0 md:mt-0 lg:mt-0">
     <div class="w-0 sm:w-0 md:w-0 lg:w-1/2 image__reg__div">&nbsp;</div>
     <div
       class="
@@ -159,7 +159,7 @@ export default {
 <style>
 .image__reg__div {
   background-image: url("../assets/register.png");
-  height: 90vh;
+  height: 95vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

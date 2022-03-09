@@ -42,7 +42,8 @@
           dark:text-white
           mt-0
           sm:mt-5
-          font-normal
+          font-medium
+          uppercase
         "
       >
         <router-link
@@ -51,7 +52,7 @@
         >
       </h2>
       <p
-        class="text-2xs md:text-base font-semibold dark:text-white mt-0 sm:mt-5"
+        class="text-2xs md:text-base font-semibold font-serif dark:text-white mt-0 sm:mt-5"
       >
         $ {{ product.price }}
       </p>

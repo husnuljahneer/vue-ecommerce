@@ -1,5 +1,5 @@
 <template >
-  <div class="flex flex-row justify-center mt-10 sm:mt-0 md:mt-0 lg:mt-0">
+  <div class="flex flex-row justify-center mt-32 sm:mt-0 md:mt-0 lg:mt-0">
     <div class="w-0 sm:w-0 md:w-0 lg:w-1/2 image__div">&nbsp;</div>
     <div
       class="

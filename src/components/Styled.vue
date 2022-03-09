@@ -60,22 +60,22 @@ export default {};
   height: 60vh;
 }
 .styled__first {
-  background-image: url(https://images.unsplash.com/photo-1572112686886-5c0b5bc8dacd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-image: url(https://marketplace.canva.com/EAE56TzbMO4/1/0/900w/canva-new-arrivals-fashion-weeks-instagram-story-FTYH1GRY-n4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .styled__second {
-  background-image: url(https://images.unsplash.com/photo-1535530705774-695729778c55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-image: url(https://marketplace.canva.com/EAE56fibVLc/1/0/900w/canva-trends-fashion-instagram-story-dRui5-jvLc8.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .styled__third {
-  background-image: url(https://images.unsplash.com/photo-1585672221229-70ef2f5b1f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-image: url(https://marketplace.canva.com/EAE6Fay_rd0/1/0/900w/canva-street-style-casual-retso-fashion-instagram-story-IqzxIaY4Ecg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .styled__fourth {
-  background-image: url(https://images.unsplash.com/photo-1643308002958-6fc02613aa5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-image: url(https://marketplace.canva.com/EAE58Zna2yA/1/0/900w/canva-fashion-style-latest-brands-instagram-story-k2b-v3PCniM.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

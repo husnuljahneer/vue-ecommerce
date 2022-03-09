@@ -1,7 +1,7 @@
 <template>
   <div
     class="p-5 sm:p-20 w-full sm:w-2/3 mx-auto"
-    style="background-color: #100d07"
+    style="background-color: rgb(7 5 1)"
   >
     <div class="flex flex-row justify-between">
       <p class="text-white">#order Id : {{ order_id }}</p>
@@ -131,7 +131,6 @@ export default {
     getInvoice() {
       CartService.getInvoice(this.userId, this.order_id)
         .then((response) => {
-          console.log(response.data.shippingDetails);
           this.address = response.data.shippingDetails.address;
           this.first_name = response.data.shippingDetails.first_name;
           this.last_name = response.data.shippingDetails.last_name;

@@ -235,7 +235,7 @@
   <section class="text-gray-600 body-font" v-else>
     <div
       class="mx-auto flex flex-col justify-center items-center"
-      style="background-color: #100d07"
+      style="background-color: rgb(7 5 1)"
     >
       <img
         class="w-full md:w-2/3 pointer-events-none select-none"
