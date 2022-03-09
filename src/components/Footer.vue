@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-28 bg-base-200 text-base-content bottom-0">
+  <footer class="py-28 text-base-content bottom-0">
     <div class="flex flex-row justify-around items-center">
       <div class="lg:flex leg:flex-row hidden">
         <h1 class="cursor-pointer px-10">
