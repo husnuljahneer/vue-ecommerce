@@ -13,9 +13,7 @@
         xs:p-1
       "
     >
-      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">
-        Login
-      </h1>
+      <h1 class="font-sans text-left ml-10 mb-5 text-4xl text-black">Login</h1>
       <form class="rounded px-8 pt-6 pb-8 mb-4" @submit="setUser">
         <div class="mb-4">
           <input
@@ -61,10 +59,9 @@
             class="
               w-full
               bg-gray-800
-                  hover:opacity-100
-                  text-white
-                  hover:bg-yellow-500
-                  hover:text-gray-700
+              hover:opacity-100
+              text-white
+              hover:bg-yellow-500 hover:text-gray-700
               font-semibold
               text-sm
               py-3
@@ -120,19 +117,17 @@ export default {
           this.accessToken = response.data.accessToken;
           this.userEmail = response.data.email;
           this.userId = response.data.id;
-
           this.$store.dispatch("auth/setUser", this.accessToken);
           this.$store.dispatch("auth/setUserEmail", this.userEmail);
           this.$store.dispatch("auth/setUserId", this.userId);
-
           this.$router.push("/");
           this.$router.go();
-
           this.toast.success("Welcome " + this.userEmail, {
             position: POSITION.BOTTOM_RIGHT,
           });
         })
         .catch((error) => {
+          console.log("This is the response", error);
           this.toast.error(
             error.response.data.message || error.response.data.status,
             { position: POSITION.BOTTOM_RIGHT }
@@ -140,7 +135,7 @@ export default {
         });
     },
     ...mapState({
-      // deepcode ignore HardcodedNonCryptoSecret: <Not Hardcoded: Sync Error>
+      // deepcode ignore HardcodedNonCryptoSecret: <please specify a reason of ignoring this>
       accessToken: "auth/user",
     }),
   },

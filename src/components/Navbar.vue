@@ -16,12 +16,14 @@
       shadow-sm
     "
   >
-    <div class="text-2xl font-serif mb-2">
-      <router-link to="/" class="z-20"> outreach </router-link>
+    <div class="flex flex-row justify-center text-2xl font-serif mb-2">
+      <router-link to="/" class="z-20">
+          <img src="@/assets/icon.png" alt="" class="h-12" />
+      </router-link>
     </div>
     <div class="flex flex-row justify-center">
       <div class="flex">
-        <div class="flex mr-2 btn btn-xs rounded-none btn-active">
+        <div class="flex mr-2 btn btn-xs rounded-none btn-ghost">
           <h1 class="mr-2 text-sm" v-if="cartCount !== 0">{{ cartCount }}</h1>
           <router-link to="/cart" class="z-20">
             <h1 class="text-sm">CART</h1>
@@ -29,14 +31,14 @@
         </div>
         <div class="mr-2 text-sm">
           <router-link v-if="!userLoggedIn" to="/login" class="z-10">
-            <h1 class="text-sm btn btn-xs rounded-none btn-active">LOGIN</h1>
+            <h1 class="text-sm btn btn-xs rounded-none btn-ghost">LOGIN</h1>
           </router-link>
           <router-link v-if="userLoggedIn" to="/profile" class="z-10">
-            <h1 class="text-sm btn btn-xs rounded-none btn-active">PROFILE</h1>
+            <h1 class="text-sm btn btn-xs rounded-none btn-ghost">PROFILE</h1>
           </router-link>
         </div>
         <div
-          class="text-sm btn btn-xs rounded-none btn-error"
+          class="text-sm btn btn-xs rounded-none btn-ghost"
           v-if="userLoggedIn"
           @click="logout"
         >
@@ -113,7 +115,7 @@
                   />
                 </svg>
                 <div
-                  class=" relative -mt-5 ml-1 p-1 w-5 bg-gray-900 z-10"
+                  class="relative -mt-5 ml-1 p-1 w-5 bg-gray-900 z-10"
                   v-if="cartCount !== 0"
                 >
                   {{ cartCount }}
@@ -149,7 +151,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
-                  fill="currentColor"
+                  fill="text-white currentColor"
                   class="bi bi-person-badge"
                   viewBox="0 0 16 16"
                 >
