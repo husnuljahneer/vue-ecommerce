@@ -28,26 +28,26 @@ Outreach is a sample application that demonstrates a responsive eCommerce websit
 
 <table>
     <tr>
-      <td><img src='https://i.imgur.com/UResTdb.png' height="300px">
+      <td><img src='https://i.imgur.com/UResTdb.png' height="50%">
       Homepage
       </td>
-      <td><img src='https://i.imgur.com/Nvf4ROW.png' height="300px">
+      <td><img src='https://i.imgur.com/Nvf4ROW.png' height="50%">
       Product
       </td>
     </tr>
     <tr>
-      <td><img src='https://i.imgur.com/7zs1dvt.png' height="300px">
+      <td><img src='https://i.imgur.com/7zs1dvt.png' height="50%">
       Prodcut Details
       </td>
-      <td><img src='https://i.imgur.com/04EPzq9.png' height="300px">
+      <td><img src='https://i.imgur.com/04EPzq9.png' height="50%">
       Cart
       </td>
     </tr>
      <tr>
-      <td><img src='https://i.imgur.com/jToEkkI.png' height="300px">
+      <td><img src='https://i.imgur.com/jToEkkI.png' height="50%">
       Invoice
       </td>
-      <td><img src='https://i.imgur.com/7rJjm4T.png' height="300px">
+      <td><img src='https://i.imgur.com/7rJjm4T.png' height="50%">
       Authentication
       </td>
     </tr>
@@ -58,14 +58,14 @@ Outreach is a sample application that demonstrates a responsive eCommerce websit
 
 <table>
     <tr>
-      <td><img src='https://i.imgur.com/jWR7X0s.png' height="600px"></td>
-      <td><img src='https://i.imgur.com/Veu9AlO.png' height="600px"></td>
-      <td><img src='https://i.imgur.com/xTcgyTp.png' height="600px"></td>
+      <td><img src='https://i.imgur.com/jWR7X0s.png' height="33%"></td>
+      <td><img src='https://i.imgur.com/Veu9AlO.png' height="33%"></td>
+      <td><img src='https://i.imgur.com/xTcgyTp.png' height="33%"></td>
     </tr>
     <tr>
-      <td><img src='https://i.imgur.com/S7mBoiz.png' height="600px"></td>
-      <td><img src='https://i.imgur.com/Rd2ZNVE.png' height="600px"></td>
-       <td><img src='https://i.imgur.com/xrDfJvv.png' height="600px"></td>
+      <td><img src='https://i.imgur.com/S7mBoiz.png' height="33%"></td>
+      <td><img src='https://i.imgur.com/Rd2ZNVE.png' height="33%"></td>
+       <td><img src='https://i.imgur.com/xrDfJvv.png' height="33%"></td>
     </tr>
  </table>
 
