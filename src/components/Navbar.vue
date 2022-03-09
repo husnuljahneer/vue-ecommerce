@@ -17,7 +17,9 @@
     "
   >
     <div class="text-2xl font-serif mb-2">
-      <router-link to="/" class="z-20"> OUTREACH </router-link>
+      <router-link to="/" class="z-20"> 
+     outreach
+      </router-link>
     </div>
     <div class="flex flex-row justify-center">
       <div class="flex">
@@ -77,7 +79,7 @@
       <router-link to="/">
         <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex">
           <span class="text-4xl font-medium font-serif text-black">
-            OUTREACH
+             <img src="@/assets/icon.png" alt="" class="h-12">
           </span>
         </div>
       </router-link>

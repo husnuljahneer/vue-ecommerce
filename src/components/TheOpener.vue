@@ -3,7 +3,7 @@
     <div class="mx-auto h-full w-full mt-10 md:mt-20">
       <div class="flex p-10 sm:p-10 md:p-10 lg:p-10 justify-between">
         <div class="flex text-left text-xl sm:text-lg md:text-2xl lg:text-3xl">
-          // OUTREACH World
+          OUTREACH World
         </div>
         <div
           class="
@@ -101,23 +101,27 @@ export default {};
 
 <style>
 .styled_opener_first {
-  background-image: url(https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80);
+  background-image: url('../assets/opener_1.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .styled_opener_second {
-  background-image: url(https://images.unsplash.com/photo-1617551307538-c9cdb9d71289?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-image: url('../assets/opener_2.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .styled_opener_third {
-  background-image: url(https://images.unsplash.com/photo-1520975661595-6453be3f7070?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+     background-image: url('../assets/opener_3.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .styled_opener_fourth {
-  background-image: url(https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80);
+    background-image: url('../assets/opener_4.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 </style>

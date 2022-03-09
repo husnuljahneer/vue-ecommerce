@@ -28,6 +28,9 @@
           sm:mx-0
           md:mx-0
           lg:mx-0
+          hover:text-white
+          font-semibold
+          opacity-75
         "
       >
         Made for everyday, <br />for everyone
@@ -70,7 +73,7 @@ export default {};
 .custom-header {
   background-color: #f5f5f5;
   height: 600px;
-  background-image: url(https://images.unsplash.com/photo-1523950704592-ee4866469b4c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80);
+  background-image: url('../assets/header.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
