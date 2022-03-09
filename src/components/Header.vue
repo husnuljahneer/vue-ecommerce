@@ -15,8 +15,7 @@
     <div class="flex flex-col">
       <div
         class="
-          text-white
-          text-center
+          text-white text-center
           sm:text-left
           md:text-left
           lg:text-left
@@ -70,7 +69,7 @@ export default {};
 .custom-header {
   background-color: #f5f5f5;
   height: 600px;
-  background-image: url('../assets/header.png');
+  background-image: url("../assets/header.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

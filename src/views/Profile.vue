@@ -1,14 +1,26 @@
 <template>
-  <section v-if="this.userProducts.length > 1"  style="background-color: #100d07;min-height:60vh">
+  <section
+    v-if="this.userProducts.length > 1"
+    style="background-color: #100d07; min-height: 60vh"
+  >
     <div class="flex flex-col pb-6 h-window p-10">
-      <div class="flex flex-col ">
+      <div class="flex flex-col">
         <p class="text-md text-left text-white w-3/4 font-semibold">
           Hi,
           <span class="text-yellow-600 font-normal uppercase">{{
             userEmail.split("@")[0]
           }}</span>
         </p>
-        <h1 class="text-md text-left sm:text-lg md:text-3xl lg:text3xl text-white font-serif">
+        <h1
+          class="
+            text-md text-left
+            sm:text-lg
+            md:text-3xl
+            lg:text3xl
+            text-white
+            font-serif
+          "
+        >
           Order History
         </h1>
       </div>
@@ -23,7 +35,6 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    
                     text-left text-xs text-yellow-500
                     font-bold
                     tracking-wider
@@ -36,7 +47,6 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    
                     text-left text-xs text-yellow-500
                     font-bold
                     tracking-wider
@@ -49,7 +59,6 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    
                     text-left text-xs text-yellow-500
                     font-bold
                     tracking-wider
@@ -62,7 +71,6 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    
                     text-left text-xs text-yellow-500
                     font-bold
                     tracking-wider
@@ -75,7 +83,6 @@
                     px-5
                     py-4
                     border-b-2 border-gray-200
-                    
                     text-left text-xs text-yellow-500
                     font-bold
                     tracking-wider
@@ -198,18 +205,12 @@
   </section>
 
   <section class="text-gray-600 body-font" v-else>
-    
     <div
-      class="
-        mx-auto
-        flex flex-col
-        p-20
-        items-center
-      "
-      style="background-color: #100d07;"
+      class="mx-auto flex flex-col p-20 items-center"
+      style="background-color: #100d07"
     >
-     <div class="flex flex-row justify-between">
-        <p class="text-md  w-3/4 font-semibold">
+      <div class="flex flex-row justify-between">
+        <p class="text-md w-3/4 font-semibold">
           Hi,
           <span class="text-yellow-600 font-normal uppercase">{{
             userEmail.split("@")[0]

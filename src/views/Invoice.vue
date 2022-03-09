@@ -1,6 +1,9 @@
 <template>
-  <div class="p-1 sm:p-20 w-full sm:w-2/3 mx-auto" style="background-color: #1d2238">
-     <div class="flex flex-row justify-center">
+  <div
+    class="p-1 sm:p-20 w-full sm:w-2/3 mx-auto"
+    style="background-color: #1d2238"
+  >
+    <div class="flex flex-row justify-center">
       <p class="text-white text-center">Outreach Fashion</p>
     </div>
     <div class="flex flex-row justify-between">
@@ -8,7 +11,9 @@
     </div>
     <div class="flex flex-col text-left mt-10">
       <p class="text-white text-sm">Invoice Date</p>
-      <p class="text-white font-bold">{{ new Date().toLocaleDateString("en-US") }}</p>
+      <p class="text-white font-bold">
+        {{ new Date().toLocaleDateString("en-US") }}
+      </p>
     </div>
     <div class="flex flex-col text-left mt-10">
       <p class="text-white">Bill To:</p>
@@ -20,7 +25,7 @@
       <p class="text-white font-light text-sm">{{ phone }}</p>
       <p class="text-white font-light text-sm">{{ pincode }}</p>
     </div>
-    <div class=" sm:-mx-8 w-full px-0 sm:px-4 md:px-4 lg:px-4 py-4">
+    <div class="sm:-mx-8 w-full px-0 sm:px-4 md:px-4 lg:px-4 py-4">
       <div class="inline-block w-full overflow-hidden">
         <table class="min-w-full leading-normal">
           <thead>
@@ -52,7 +57,7 @@
               </th>
               <th
                 class="
-                 rounded-tr-2xl
+                  rounded-tr-2xl
                   px-5
                   py-4
                   spcl
@@ -78,9 +83,7 @@
                 </p>
               </td>
               <td class="px-5 py-5 text-left spcl text-sm">
-                 <p class="text-white whitespace-no-wrap">
-                  ${{ item.price }}
-                </p>
+                <p class="text-white whitespace-no-wrap">${{ item.price }}</p>
               </td>
             </tr>
             <tr>
@@ -88,7 +91,20 @@
                 Total
               </td>
               <td class="px-5 py-5 text-left bg-black text-sm"></td>
-              <td class="px-5 py-5 text-left bg-black text-xl font-serif text-white font-bold">${{grand_total}}</td>
+              <td
+                class="
+                  px-5
+                  py-5
+                  text-left
+                  bg-black
+                  text-xl
+                  font-serif
+                  text-white
+                  font-bold
+                "
+              >
+                ${{ grand_total }}
+              </td>
             </tr>
           </tbody>
         </table>

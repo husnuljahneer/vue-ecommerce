@@ -18,7 +18,7 @@
   >
     <div class="flex flex-row justify-center text-2xl font-serif mb-2">
       <router-link to="/" class="z-20">
-          <img src="@/assets/icon.png" alt="" class="h-12" />
+        <img src="@/assets/icon.png" alt="" class="h-12" />
       </router-link>
     </div>
     <div class="flex flex-row justify-center">

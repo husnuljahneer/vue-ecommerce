@@ -46,7 +46,7 @@
         </h1>
       </div>
       <div class="flex flex-col">
-        <img src="@/assets/icon.png" alt="" class="h-12">
+        <img src="@/assets/icon.png" alt="" class="h-12" />
         <h1 class="text-sm mt-5">© 2022 Outreach Fashion</h1>
       </div>
       <div class="lg:flex lg:flex-row hidden">

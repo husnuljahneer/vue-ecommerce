@@ -1,5 +1,5 @@
 <template>
-  <section class=" cart-filled mt-10" v-if="cartItemCount >= 1">
+  <section class="cart-filled mt-10" v-if="cartItemCount >= 1">
     <div class="flex text-3xl px-10 lg:px-20 md:px-10">// CART</div>
     <div class="flex justify-center my-6">
       <h2
@@ -47,28 +47,35 @@
             <tbody>
               <tr v-for="item in cart" :key="item.id">
                 <td class="hidden pb-4 md:table-cell">
-                  
-                    <img
-                      :src="item.image"
-                      class="w-24 rounded"
-                      alt="Thumbnail"
-                    />
-                  
+                  <img :src="item.image" class="w-24 rounded" alt="Thumbnail" />
                 </td>
                 <td class="text-left md:text-center">
-                    <p class="mb-2 md:ml-4 text-left md:text-center">{{ item.name }}</p>
-                    <button
-                      @click="removeProductFromCart(item)"
-                      type="submit"
-                      class="text-gray-700 md:ml-4"
-                    >
-                      <small>(Remove item)</small>
-                    </button>
+                  <p class="mb-2 md:ml-4 text-left md:text-center">
+                    {{ item.name }}
+                  </p>
+                  <button
+                    @click="removeProductFromCart(item)"
+                    type="submit"
+                    class="text-gray-700 md:ml-4"
+                  >
+                    <small>(Remove item)</small>
+                  </button>
                 </td>
-                <td class="justify-center md:justify-end md:flex mt-14 ">
+                <td class="justify-center md:justify-end md:flex mt-14">
                   <div class="w-20 h-10">
                     <div class="relative flex flex-row w-full h-8">
-                      <div class="custom-number-input flex justify-center h-10 w-20 sm:w-20 md:w-24 lg:w-32">
+                      <div
+                        class="
+                          custom-number-input
+                          flex
+                          justify-center
+                          h-10
+                          w-20
+                          sm:w-20
+                          md:w-24
+                          lg:w-32
+                        "
+                      >
                         <div
                           class="
                             flex flex-row
@@ -167,7 +174,6 @@
                       m-2
                       text-base
                       lg:text-lg
-                      
                       text-center text-gray-800
                     "
                   >
@@ -177,22 +183,21 @@
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                      l text-base
+                      l
+                      text-base
                       lg:text-lg
-                      
                       text-center text-gray-900
                     "
                   >
                     {{ cartTotalPrice }}.00 $
                   </div>
-                  
                 </div>
-                 <div class="flex justify-between border-b">
+                <div class="flex justify-between border-b">
                   <div
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                       text-base
+                      text-base
                       lg:text-lg
                       text-center text-gray-800
                     "
@@ -203,17 +208,15 @@
                     class="
                       lg:px-4 lg:py-2
                       m-2
-                       text-base
+                      text-base
                       lg:text-lg
-                      
                       text-center text-gray-900
                     "
                   >
-                    {{shippingRate}}.00 $
+                    {{ shippingRate }}.00 $
                   </div>
-                  
                 </div>
-                 <div class="flex justify-between border-b">
+                <div class="flex justify-between border-b">
                   <div
                     class="
                       lg:px-4 lg:py-2
@@ -235,23 +238,21 @@
                       text-center text-gray-900
                     "
                   >
-                    {{ cartTotalPrice + shippingRate}}.00 $
+                    {{ cartTotalPrice + shippingRate }}.00 $
                   </div>
-                  
                 </div>
-                
+
                 <button
                   @click="checkout()"
                   class="
-                   w-full
+                    w-full
                     py-4
                     mt-6
                     font-medium
                     bg-gray-800
-                  hover:opacity-100
-                  text-white
-                  hover:bg-yellow-500
-                  hover:text-gray-700
+                    hover:opacity-100
+                    text-white
+                    hover:bg-yellow-500 hover:text-gray-700
                     uppercase
                     btn btn-ghost
                     rounded-none
@@ -270,13 +271,8 @@
   </section>
   <section class="text-gray-600 body-font" v-else>
     <div
-      class="
-        mx-auto
-        flex flex-col
-        justify-center
-        items-center
-      "
-      style="background-color: #100d07;"
+      class="mx-auto flex flex-col justify-center items-center"
+      style="background-color: #100d07"
     >
       <img
         class="w-full md:w-2/3 pointer-events-none select-none"
@@ -322,7 +318,7 @@ export default {
     ]),
     checkout() {
       if (this.userLoggedIn) {
-       this.$router.push("/checkout");
+        this.$router.push("/checkout");
       } else {
         this.$router.push("/login");
       }

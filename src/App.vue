@@ -5,7 +5,6 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
-
 export default {
   components: {
     Navbar,
@@ -19,6 +18,7 @@ export default {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   text-align: center;
   background-color: white;
   color: #000000;

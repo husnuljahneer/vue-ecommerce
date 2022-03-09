@@ -2,15 +2,11 @@
   <div class="mb-7">
     <!-- //after loading -->
 
-    <div class="flex justify-end items-start" style="z-index: 1;">
+    <div class="flex justify-end items-start" style="z-index: 1">
       <div class="flex flex-row absolute justify-end space-x-2">
         <button
           @click="addProductToCart(product)"
-          class="
-            btn btn-ghost
-            hover:bg-gray-700
-            btn-lg
-          "
+          class="btn btn-ghost hover:bg-gray-700 btn-lg"
           style="z-index: 2"
         >
           <svg
@@ -39,7 +35,15 @@
     </div>
     <div class="flex flex-col sm:flex-row justify-between">
       <h2
-        class="text-sm md:text-base text-black dark:text-white mt-0 sm:mt-5 font-normal"
+        class="
+          text-sm
+          md:text-base
+          text-black
+          dark:text-white
+          mt-0
+          sm:mt-5
+          font-normal
+        "
       >
         <router-link
           :to="{ name: 'ProductDetails', params: { id: product.id } }"
@@ -47,14 +51,7 @@
         >
       </h2>
       <p
-        class="
-          text-2xs
-          md:text-base
-          font-semibold
-          dark:text-white
-          mt-0
-          sm:mt-5
-        "
+        class="text-2xs md:text-base font-semibold dark:text-white mt-0 sm:mt-5"
       >
         $ {{ product.price }}
       </p>

@@ -101,25 +101,25 @@ export default {};
 
 <style>
 .styled_opener_first {
-  background-image: url('../assets/opener_1.png');
+  background-image: url("../assets/opener_1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .styled_opener_second {
-    background-image: url('../assets/opener_2.png');
+  background-image: url("../assets/opener_2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .styled_opener_third {
-     background-image: url('../assets/opener_3.png');
+  background-image: url("../assets/opener_3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .styled_opener_fourth {
-    background-image: url('../assets/opener_4.png');
+  background-image: url("../assets/opener_4.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="p-1 mt-10 md:mt-2" id="products_section" > 
+    <div class="p-1 mt-10 md:mt-2" id="products_section">
       <div class="p-1 md:p-10">
         <div class="flex text-left text-2xl md:text-3xl p-1 lg:p-0 mb-5">
           LATEST PRODUCTS
