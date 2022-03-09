@@ -24,30 +24,50 @@ Outreach is a sample application that demonstrates a responsive eCommerce websit
 - [postgresql](https://www.postgresql.org/)
 
 
-## Screenshots
-![Home Page](https://i.imgur.com/UResTdb.png)
+## Selected Screens
 
-**Homepage**
+<table>
+    <tr>
+      <td><img src='https://i.imgur.com/UResTdb.png' height="300px">
+      Homepage
+      </td>
+      <td><img src='https://i.imgur.com/Nvf4ROW.png' height="300px">
+      Product
+      </td>
+    </tr>
+    <tr>
+      <td><img src='https://i.imgur.com/7zs1dvt.png' height="300px">
+      Prodcut Details
+      </td>
+      <td><img src='https://i.imgur.com/04EPzq9.png' height="300px">
+      Cart
+      </td>
+    </tr>
+     <tr>
+      <td><img src='https://i.imgur.com/jToEkkI.png' height="300px">
+      Invoice
+      </td>
+      <td><img src='https://i.imgur.com/7rJjm4T.png' height="300px">
+      Authentication
+      </td>
+    </tr>
+ </table>
 
-![products_section](https://i.imgur.com/Nvf4ROW.png)
 
-**Products Section**
+# Selected Mobile Screens
 
-![product_details_page](https://i.imgur.com/7zs1dvt.png)
-
-**Product details page**
-
-![cart_system](https://i.imgur.com/04EPzq9.png)
-
-**Cart**
-
-![Invoice](https://i.imgur.com/jToEkkI.png)
-
-**Login Screen**
-
-![login_screen](https://i.imgur.com/7rJjm4T.png)
-
-**Login Screen**
+<table>
+    <tr>
+      <td><img src='https://i.imgur.com/jWR7X0s.png' height="600px"></td>
+      <td><img src='https://i.imgur.com/Veu9AlO.png' height="600px"></td>
+      <td><img src='https://i.imgur.com/xTcgyTp.png' height="600px"></td>
+    </tr>
+    <tr>
+      <td><img src='https://i.imgur.com/S7mBoiz.png' height="600px"></td>
+      <td><img src='https://i.imgur.com/Rd2ZNVE.png' height="600px"></td>
+       <td><img src='https://i.imgur.com/xrDfJvv.png' height="600px"></td>
+    </tr>
+ </table>
 
 [LIVE DEMO](http://outreach-fashion.s3-website.ap-south-1.amazonaws.com/)
 
