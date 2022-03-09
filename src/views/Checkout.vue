@@ -331,6 +331,6 @@ export default {
   background-image: url("../assets/checkout.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 95vh;
 }
 </style>

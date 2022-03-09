@@ -77,7 +77,7 @@
         </div>
       </div>
       <router-link to="/">
-        <div class="hidden md:flex px-2 mx-2 navbar-center lg:flex">
+        <div class="-ml-2 hidden md:flex px-2 mx-2 navbar-center lg:flex">
           <span class="text-4xl font-medium font-serif text-black">
             <img src="@/assets/icon.png" alt="" class="h-12" />
           </span>

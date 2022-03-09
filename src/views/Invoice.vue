@@ -1,11 +1,8 @@
 <template>
   <div
-    class="p-1 sm:p-20 w-full sm:w-2/3 mx-auto"
-    style="background-color: #1d2238"
+    class="p-5 sm:p-20 w-full sm:w-2/3 mx-auto"
+    style="background-color: #100d07"
   >
-    <div class="flex flex-row justify-center">
-      <p class="text-white text-center">Outreach Fashion</p>
-    </div>
     <div class="flex flex-row justify-between">
       <p class="text-white">#order Id : {{ order_id }}</p>
     </div>
@@ -35,8 +32,8 @@
                   rounded-tl-2xl
                   px-5
                   py-4
-                  spcl
-                  text-left text-xs text-white
+                  bg-yellow-500
+                  text-left text-xs text-gray-900
                   font-bold
                   tracking-wider
                 "
@@ -47,8 +44,8 @@
                 class="
                   px-5
                   py-4
-                  spcl
-                  text-left text-xs text-white
+                  bg-yellow-500
+                  text-left text-xs text-gray-900
                   font-bold
                   tracking-wider
                 "
@@ -60,8 +57,8 @@
                   rounded-tr-2xl
                   px-5
                   py-4
-                  spcl
-                  text-left text-xs text-white
+                  bg-yellow-500
+                  text-left text-xs text-gray-900
                   font-bold
                   tracking-wider
                 "
@@ -72,18 +69,18 @@
           </thead>
           <tbody>
             <tr v-for="item in userProducts" :key="item.order_id">
-              <td class="px-5 py-5 text-left spcl text-sm">
-                <p class="text-white whitespace-no-wrap">
+              <td class="px-5 py-5 text-left bg-yellow-500 text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">
                   {{ item.product_name }}
                 </p>
               </td>
-              <td class="px-5 py-5 spcl text-sm text-left">
-                <p class="text-white whitespace-no-wrap">
+              <td class="px-5 py-5 bg-yellow-500 text-sm text-left">
+                <p class="text-gray-900 whitespace-no-wrap">
                   {{ item.qty }}
                 </p>
               </td>
-              <td class="px-5 py-5 text-left spcl text-sm">
-                <p class="text-white whitespace-no-wrap">${{ item.price }}</p>
+              <td class="px-5 py-5 text-left bg-yellow-500 text-sm">
+                <p class="text-gray-900 whitespace-no-wrap">${{ item.price }}</p>
               </td>
             </tr>
             <tr>
@@ -179,7 +176,7 @@ export default {
 };
 </script>
 <style>
-.spcl {
+.bg-yellow-500 {
   background-color: #252946;
 }
 </style>
