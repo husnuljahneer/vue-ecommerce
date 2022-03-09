@@ -2,18 +2,14 @@
   <div class="mb-7">
     <!-- //after loading -->
 
-    <div class="flex justify-end items-start" style="z-index: 1">
+    <div class="flex justify-end items-start" style="z-index: 1;">
       <div class="flex flex-row absolute justify-end space-x-2">
         <button
           @click="addProductToCart(product)"
           class="
             btn btn-ghost
-            hover:bg-white
-            
+            hover:bg-gray-700
             btn-lg
-            md:btn-lg
-            lg:btn-lg
-            xl:btn-lg
           "
           style="z-index: 2"
         >

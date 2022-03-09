@@ -244,18 +244,19 @@
                   @click="checkout()"
                   class="
                    w-full
-
                     py-4
                     mt-6
                     font-medium
-                    text-white
+                    bg-gray-800
+                  hover:opacity-100
+                  text-white
+                  hover:bg-yellow-500
+                  hover:text-gray-700
                     uppercase
-                    btn btn-active
+                    btn btn-ghost
                     rounded-none
                     item-center
                     align-middle
-                    hover:bg-gray-700
-                    focus:shadow-outline focus:outline-none
                   "
                 >
                   <span class="ml-2 mt-5px">Procceed to checkout</span>
@@ -270,17 +271,15 @@
   <section class="text-gray-600 body-font" v-else>
     <div
       class="
-        container
         mx-auto
         flex flex-col
-        px-5
-        py-24
         justify-center
         items-center
       "
+      style="background-color: #100d07;"
     >
       <img
-        class="mb-10 max-h-96 pointer-events-none select-none"
+        class="w-full md:w-2/3 pointer-events-none select-none"
         alt="empty_cart"
         src="../assets/empty_cart.png"
       />

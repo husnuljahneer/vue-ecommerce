@@ -1,6 +1,6 @@
 <template>
   <div class="p-1 md:p-10">
-    <div class="flex text-left text-3xl lg:p-0 md:p-10">// SHOP MORE</div>
+    <div class="flex text-left text-3xl lg:p-0 md:p-10">SHOP MORE</div>
     <div class="px-1 py-6">
       <div
         class="

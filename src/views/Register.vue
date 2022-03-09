@@ -79,9 +79,11 @@
           <button
             @click="signup"
             class="
-              hover:bg-green-500 hover:border-green-500 hover:text-white
-              text-black
-              border-2 border-green-500
+              bg-gray-800
+                  hover:opacity-100
+                  text-white
+                  hover:bg-yellow-500
+                  hover:text-gray-700
               font-semibold
               text-sm
               py-3

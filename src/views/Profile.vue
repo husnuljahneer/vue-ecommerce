@@ -199,33 +199,29 @@
   </section>
 
   <section class="text-gray-600 body-font" v-else>
+    
     <div
       class="
-        container
         mx-auto
         flex flex-col
-        px-5
-        py-24
-        justify-center
+        p-20
         items-center
       "
+      style="background-color: #100d07;"
     >
-      <img
-        class="lg:w-1/5 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
-        alt="hero"
-        src="https://i.imgur.com/ztqw8L5.png"
-      />
-      <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-        <h1
-          class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
-        >
-          Did you order anything? Your order history is empty.
-        </h1>
-        <p class="mb-8 leading-relaxed">
-          You haven't ordered anything yet. You can order your favourite items
-          from the shop.
+     <div class="flex flex-row justify-between">
+        <p class="text-md  w-3/4 font-semibold">
+          Hi,
+          <span class="text-yellow-600 font-normal uppercase">{{
+            userEmail.split("@")[0]
+          }}</span>
         </p>
       </div>
+      <img
+        class="w-full md:w-2/3 pointer-events-none select-none"
+        alt="empty_cart"
+        src="../assets/error_profile.png"
+      />
     </div>
   </section>
 </template>

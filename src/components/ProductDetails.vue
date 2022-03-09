@@ -72,13 +72,13 @@
               <button
                 @click="addProductToCart(product)"
                 class="
-                  btn btn-accent
+                  btn btn-ghost
                   rounded-sm
-                  bg-green-500
-                  opacity-75
+                  bg-gray-800
                   hover:opacity-100
-                  text-black-900
-                  hover:text-white
+                  text-white
+                  hover:bg-yellow-500
+                  hover:text-gray-700
                   px-10
                   py-2
                   font-semibold

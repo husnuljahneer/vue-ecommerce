@@ -25,7 +25,7 @@
           sm:mx-0
           md:mx-0
           lg:mx-0
-          hover:text-white
+          hover:text-yellow-100
           font-semibold
           opacity-75
         "
