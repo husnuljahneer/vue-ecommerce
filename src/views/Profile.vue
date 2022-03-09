@@ -7,7 +7,7 @@
     <div class="flex flex-col pb-6 h-window p-10">
       <div class="flex flex-col">
         <div
-          class="w-full mx-auto rounded-2xl px-8 py-6 shadow-lg"
+          class="w-full mx-auto px-8 py-6 shadow-lg"
           style="background-color: rgb(7 5 1)"
         >
           <div class="mt-6 w-fit mx-auto">
@@ -20,7 +20,7 @@
           </div>
 
           <div class="mt-8">
-            <h2 class="text-white font-bold text-lg text-left tracking-wide">
+            <h2 class="text-white font-bold text-md text-left tracking-wide uppercase">
               {{ this.userEmail.split("@")[0] }}
             </h2>
           </div>
