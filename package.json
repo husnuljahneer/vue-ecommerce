@@ -15,7 +15,7 @@
         "core-js": "^3.6.5",
         "daisyui": "^1.25.4",
         "tailwind-scrollbar-hide": "^1.1.7",
-        "vue": "3.2.31",
+        "vue": "3.2.32",
         "vue-html2pdf": "^1.8.0",
         "vue-router": "4.0.13",
         "vue-star-rating": "^2.1.0",
