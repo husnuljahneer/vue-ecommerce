@@ -11,7 +11,7 @@
         "@formkit/themes": "1.0.0-beta.5",
         "@formkit/vue": "1.0.0-beta.4",
         "@luxdamore/vue-cursor-fx": "^1.6.2",
-        "axios": "0.26.0",
+        "axios": "1.6.4",
         "core-js": "^3.6.5",
         "daisyui": "^1.25.4",
         "tailwind-scrollbar-hide": "^1.1.7",
